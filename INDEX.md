@@ -36,6 +36,8 @@ This database contains raw source materials, strategies, and Claude AI setups fo
 - [CPI/Macro - Reddit](./raw-sources/cpi-macro-reddit.md)
 - [Sports Bot - QuantVPS](./raw-sources/sports-bot-quantvps.md)
 - [On-Chain Data - Dune](./raw-sources/onchain-data-dune.md)
+- [Polymarket HFT - QuantVPS](./raw-sources/polymarket-hft-quantvps.md)
+- [Political Polling - Paradox Intelligence](./raw-sources/political-polling-paradoxintelligence.md)
 
 ## 🛠 Tools & Frameworks
 - **Claude Code:** Anthropic's CLI for autonomous coding and automation.
