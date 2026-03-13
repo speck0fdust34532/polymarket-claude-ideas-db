@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polymarket & Claude AI Ideas Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Polymarket & Claude AI Ideas Dashboard</h1>
+            <p>A searchable database of money-making strategies using Claude AI for prediction markets and trading.</p>
+        </header>
+
+        <div class="filters-section">
+            <h2>Filter Strategies</h2>
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="platform-filter">Platform:</label>
+                    <select id="platform-filter">
+                        <option value="">All Platforms</option>
+                        <option value="polymarket">Polymarket</option>
+                        <option value="kalshi">Kalshi</option>
+                        <option value="stocks">Stocks/Options/Futures</option>
+                        <option value="saas">SaaS/Business</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="volume-filter">Transaction Volume:</label>
+                    <select id="volume-filter">
+                        <option value="">All Volumes</option>
+                        <option value="low">Low</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="tax-filter">Tax Complexity:</label>
+                    <select id="tax-filter">
+                        <option value="">All Complexities</option>
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="durability-filter">Durability:</label>
+                    <select id="durability-filter">
+                        <option value="">All Durability Levels</option>
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="claude-filter">Claude Role:</label>
+                    <select id="claude-filter">
+                        <option value="">All Roles</option>
+                        <option value="research">Research & Analysis</option>
+                        <option value="execution">Execution & Automation</option>
+                        <option value="both">Both</option>
+                    </select>
+                </div>
+
+                <button id="reset-filters" class="reset-btn">Reset Filters</button>
+            </div>
+        </div>
+
+        <div class="strategies-section">
+            <h2>Strategies (<span id="strategy-count">0</span>)</h2>
+            <div id="strategies-container" class="strategies-grid">
+                <!-- Strategy cards will be dynamically inserted here -->
+            </div>
+        </div>
+
+        <footer>
+            <p>Last updated: <span id="last-updated">Loading...</span></p>
+            <p><a href="https://github.com/speck0fdust34532/polymarket-claude-ideas-db" target="_blank">View on GitHub</a></p>
+        </footer>
+    </div>
+
+    <script src="strategies.json"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
