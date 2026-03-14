@@ -2,18 +2,19 @@
 
 A comprehensive, living database of money-making ideas and strategies involving Claude AI, Polymarket, Kalshi, stocks, options, and futures trading. Includes architecture blueprints, raw source materials, and AI-generated analysis.
 
-**Last Updated:** 2026-03-13 | **Total Files:** 45+ | **Repo:** [speck0fdust34532/polymarket-claude-ideas-db](https://github.com/speck0fdust34532/polymarket-claude-ideas-db)
+**Last Updated:** 2026-03-14 | **Total Files:** 50+ | **Repo:** [speck0fdust34532/polymarket-claude-ideas-db](https://github.com/speck0fdust34532/polymarket-claude-ideas-db)
 
 ---
 
-## 🆕 New in This Update (2026-03-13)
+## 🆕 New in This Update (2026-03-14)
 
 | File | Description |
 |------|-------------|
-| [/polymarket-strategies/ensemble-ai-probability-arbitrage.md](./polymarket-strategies/ensemble-ai-probability-arbitrage.md) | Ensemble AI probability arbitrage strategy using multiple LLMs for consensus. |
-| [/polymarket-strategies/multi-pillar-market-analysis.md](./polymarket-strategies/multi-pillar-market-analysis.md) | Multi-pillar market analysis using independent expert models for comprehensive market analysis. |
-| [/polymarket-strategies/momentum-detection-twitter-news.md](./polymarket-strategies/momentum-detection-twitter-news.md) | Momentum detection strategy using Twitter and news APIs for early market entry. |
-| [/github-repos/polyseer.md](./github-repos/polyseer.md) | Polyseer: Open-source AI research platform for systematic evidence-based analysis. |
+| [/polymarket-strategies/ultra-short-crypto-bets.md](./polymarket-strategies/ultra-short-crypto-bets.md) | Strategy for 5-minute Bitcoin and Ethereum markets on Polymarket and Kalshi. |
+| [/claude-trading-setups/two-layer-ai-system.md](./claude-trading-setups/two-layer-ai-system.md) | Technical blueprint for a two-layer AI system separating strategy from execution. |
+| [/github-repos/polymarket-kalshi-15min-arbitrage.md](./github-repos/polymarket-kalshi-15min-arbitrage.md) | Open-source bot for cross-platform arbitrage on 15-minute crypto markets. |
+| [/raw-sources/reddit-ai-comparison-2026.md](./raw-sources/reddit-ai-comparison-2026.md) | Deep-dive comparison of ChatGPT, Claude, and Gemini for prediction market trading. |
+| [/raw-sources/medium-bot-strategies-2026.md](./raw-sources/medium-bot-strategies-2026.md) | Analysis of 4 core bot strategies: AMM, AI-Arb, Correlation-Arb, and Momentum. |
 
 ---
 
@@ -29,9 +30,10 @@ A comprehensive, living database of money-making ideas and strategies involving 
 - [GitHub Agent Hierarchy Research](./claude-hierarchy/github_hierarchy_research.md) — Deep analysis of 15+ GitHub repos implementing Claude multi-agent systems. Covers 5 architecture patterns with trading applicability ratings.
 
 ### [/polymarket-strategies/](./polymarket-strategies/)
-- [Ensemble AI Probability Arbitrage Strategy](./polymarket-strategies/ensemble-ai-probability-arbitrage.md) — **NEW**
-- [Multi-Pillar Market Analysis Strategy](./polymarket-strategies/multi-pillar-market-analysis.md) — **NEW**
-- [Momentum Detection via Twitter and News APIs Strategy](./polymarket-strategies/momentum-detection-twitter-news.md) — **NEW**
+- [Ultra-Short Crypto Bets Strategy](./polymarket-strategies/ultra-short-crypto-bets.md) — **NEW**
+- [Ensemble AI Probability Arbitrage Strategy](./polymarket-strategies/ensemble-ai-probability-arbitrage.md)
+- [Multi-Pillar Market Analysis Strategy](./polymarket-strategies/multi-pillar-market-analysis.md)
+- [Momentum Detection via Twitter and News APIs Strategy](./polymarket-strategies/momentum-detection-twitter-news.md)
 - [Weather Arbitrage Strategy on Polymarket](./polymarket-strategies/weather-arbitrage.md)
 - [CPI & Macro Data Trading Strategy](./polymarket-strategies/cpi-macro-trading.md)
 - [Sports Betting Bots Strategy on Polymarket](./polymarket-strategies/sports-betting-bots.md)
@@ -47,6 +49,7 @@ A comprehensive, living database of money-making ideas and strategies involving 
 - [15 Best Claude Code Business Ideas for Developers](./kalshi-strategies/15-best-claude-code-business-ideas-for-developers-2026.md)
 
 ### [/claude-trading-setups/](./claude-trading-setups/)
+- [Two-Layer AI System Setup](./claude-trading-setups/two-layer-ai-system.md) — **NEW**
 - [Claude as a Trading Second Brain](./claude-trading-setups/trading-second-brain.md)
 - [MCP-Integrated Command Center](./claude-trading-setups/mcp-command-center.md)
 - [How to Use Alternative Data to Find Mispriced Polymarket Contracts](./claude-trading-setups/how-to-use-alternative-data-to-find-mispriced-polymarket-contracts.md)
@@ -61,12 +64,15 @@ A comprehensive, living database of money-making ideas and strategies involving 
 - [Hurricane Track Analysis for Weather Trading](./weather-data-edges/hurricane-tracks.md)
 
 ### [/github-repos/](./github-repos/)
-- [Polyseer (Open-source AI Research Platform)](./github-repos/polyseer.md) — **NEW**
+- [Polymarket & Kalshi 15-Minute Arbitrage Bot](./github-repos/polymarket-kalshi-15min-arbitrage.md) — **NEW**
+- [Polyseer (Open-source AI Research Platform)](./github-repos/polyseer.md)
 - [OpenClaw (Autonomous Agent Framework)](./github-repos/openclaw.md)
 - [Polymarket Agents (Official)](./github-repos/polymarket-agents.md)
 - [Simmer SDK (Trading Skills)](./github-repos/simmer-sdk.md)
 
 ### [/raw-sources/](./raw-sources/)
+- [Reddit AI Comparison 2026](./raw-sources/reddit-ai-comparison-2026.md) — **NEW**
+- [Medium Bot Strategies 2026](./raw-sources/medium-bot-strategies-2026.md) — **NEW**
 - [Weather Bot - Publish0x](./raw-sources/weather-bot-publish0x.md)
 - [CPI/Macro - Reddit](./raw-sources/cpi-macro-reddit.md)
 - [Sports Bot - QuantVPS](./raw-sources/sports-bot-quantvps.md)
@@ -97,6 +103,7 @@ A comprehensive, living database of money-making ideas and strategies involving 
 
 | Strategy | Platform | Volume | Tax Treatment | Durability | Claude Role |
 |----------|----------|--------|---------------|------------|-------------|
+| Ultra-Short Crypto | Both | HIGH | Short-term | MEDIUM | Pattern recognition |
 | Weather Arbitrage | Polymarket | LOW | Short-term gains | HIGH | Data synthesis |
 | Economic Data (CPI/NFP) | Kalshi | LOW | 60/40 Section 1256 | HIGH | Forecast generation |
 | Polymarket vs Kalshi Arb | Both | MEDIUM | Mixed | MEDIUM | Odds monitoring |
