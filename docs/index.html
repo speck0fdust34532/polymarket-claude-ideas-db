@@ -3,236 +3,292 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Polymarket &amp; Claude AI Trading Research Dashboard</title>
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<title>Polymarket & Claude AI Trading Research Dashboard</title>
 <style>
 :root {
-  --bg: #0a0e1a;
-  --bg2: #131929;
-  --bg3: #1a2035;
-  --bg4: #1e2640;
+  --bg: #080d18;
+  --bg2: #0f1624;
+  --bg3: #141d2e;
+  --bg4: #1a2540;
+  --bg5: #1e2b48;
   --green: #00ff88;
   --cyan: #00d4ff;
   --yellow: #ffd700;
   --red: #ff4757;
   --purple: #a855f7;
   --orange: #ff8c00;
-  --text: #e8eaf0;
-  --text2: #9aa3b8;
-  --border: #2a3050;
-  --shadow: 0 4px 24px rgba(0,0,0,0.5);
+  --pink: #f472b6;
+  --text: #e2e8f0;
+  --text2: #94a3b8;
+  --text3: #64748b;
+  --border: #1e2d4a;
+  --border2: #243352;
+  --shadow: 0 8px 32px rgba(0,0,0,0.6);
+  --radius: 10px;
+  --transition: 0.18s ease;
 }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; }
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,-apple-system,sans-serif;min-height:100vh;font-size:14px}
 
-.header { background: linear-gradient(135deg, #0d1526 0%, #0a1020 100%); border-bottom: 1px solid var(--border); padding: 20px 24px; }
-.header-top { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-.header h1 { font-size: 1.4rem; font-weight: 700; background: linear-gradient(90deg, var(--green), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.header p { color: var(--text2); font-size: 0.85rem; margin-top: 4px; }
-.search-wrap { position: relative; }
-.search-wrap input { background: var(--bg3); border: 1px solid var(--border); color: var(--text); padding: 10px 16px 10px 40px; border-radius: 8px; width: 300px; font-size: 0.9rem; outline: none; transition: border-color 0.2s; }
-.search-wrap input:focus { border-color: var(--cyan); }
-.search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text2); font-size: 0.9rem; pointer-events: none; }
+/* HEADER */
+.header{background:linear-gradient(135deg,#0a1020 0%,#0d1830 100%);border-bottom:1px solid var(--border);padding:16px 20px;position:sticky;top:0;z-index:100;backdrop-filter:blur(8px)}
+.header-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.logo{font-size:1.2rem;font-weight:800;background:linear-gradient(90deg,var(--green),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;white-space:nowrap}
+.header-meta{color:var(--text2);font-size:0.78rem;flex:1}
+.search-wrap{position:relative;flex-shrink:0}
+.search-wrap input{background:var(--bg3);border:1px solid var(--border2);color:var(--text);padding:8px 12px 8px 36px;border-radius:8px;width:260px;font-size:0.85rem;outline:none;transition:border-color var(--transition)}
+.search-wrap input:focus{border-color:var(--cyan)}
+.search-icon{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--text3);pointer-events:none;font-size:0.85rem}
+.header-actions{display:flex;gap:8px;align-items:center}
+.btn-icon{background:var(--bg3);border:1px solid var(--border2);color:var(--text2);padding:7px 12px;border-radius:7px;cursor:pointer;font-size:0.78rem;transition:all var(--transition);white-space:nowrap}
+.btn-icon:hover{border-color:var(--cyan);color:var(--cyan)}
+.btn-icon.active{border-color:var(--cyan);color:var(--cyan);background:rgba(0,212,255,0.1)}
+.kbd-hint{font-size:0.68rem;color:var(--text3);background:var(--bg4);border:1px solid var(--border);border-radius:3px;padding:1px 4px}
 
-.stats-bar { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 10px 24px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; min-height: 42px; }
-.stat-pill { background: var(--bg3); border: 1px solid var(--border); border-radius: 20px; padding: 3px 10px; font-size: 0.75rem; color: var(--text2); white-space: nowrap; }
-.stat-pill span { color: var(--cyan); font-weight: 700; }
-.total-count { color: var(--green); font-weight: 700; font-size: 0.9rem; white-space: nowrap; }
+/* STATS BAR */
+.stats-bar{background:var(--bg2);border-bottom:1px solid var(--border);padding:8px 20px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;min-height:38px}
+.stat-count{color:var(--green);font-weight:700;font-size:0.88rem;white-space:nowrap}
+.stat-pill{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:2px 9px;font-size:0.72rem;color:var(--text2);white-space:nowrap;cursor:pointer;transition:all var(--transition)}
+.stat-pill:hover{border-color:var(--cyan);color:var(--cyan)}
+.stat-pill span{color:var(--cyan);font-weight:700}
 
-.filters-bar { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 12px 24px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
-.filter-group { display: flex; align-items: center; gap: 6px; }
-.filter-group label { font-size: 0.78rem; color: var(--text2); white-space: nowrap; }
-.filters-bar select { background: var(--bg3); border: 1px solid var(--border); color: var(--text); padding: 6px 10px; border-radius: 6px; font-size: 0.82rem; outline: none; cursor: pointer; }
-.filters-bar select:focus { border-color: var(--cyan); }
-.btn-reset { background: transparent; border: 1px solid var(--red); color: var(--red); padding: 6px 14px; border-radius: 6px; font-size: 0.82rem; cursor: pointer; margin-left: auto; }
-.btn-reset:hover { background: var(--red); color: white; }
+/* FILTER BAR */
+.filter-bar{background:var(--bg2);border-bottom:1px solid var(--border);padding:10px 20px}
+.filter-row{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:6px}
+.filter-row:last-child{margin-bottom:0}
+.filter-label{font-size:0.72rem;color:var(--text3);text-transform:uppercase;letter-spacing:0.5px;min-width:70px;flex-shrink:0}
+.chip{background:var(--bg3);border:1px solid var(--border2);color:var(--text2);padding:3px 9px;border-radius:20px;font-size:0.74rem;cursor:pointer;transition:all var(--transition);white-space:nowrap}
+.chip:hover{border-color:var(--cyan);color:var(--cyan)}
+.chip.active{background:rgba(0,212,255,0.15);border-color:var(--cyan);color:var(--cyan);font-weight:600}
+.filter-presets{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.preset-btn{background:var(--bg4);border:1px solid var(--border2);color:var(--text2);padding:4px 10px;border-radius:6px;font-size:0.74rem;cursor:pointer;transition:all var(--transition)}
+.preset-btn:hover{border-color:var(--yellow);color:var(--yellow)}
+.btn-clear{background:transparent;border:1px solid var(--red);color:var(--red);padding:4px 10px;border-radius:6px;font-size:0.74rem;cursor:pointer;margin-left:auto}
+.btn-clear:hover{background:var(--red);color:white}
+.active-count{background:var(--cyan);color:var(--bg);border-radius:10px;padding:1px 6px;font-size:0.68rem;font-weight:700;margin-left:4px}
 
-.main { padding: 20px 24px; }
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
-.no-results { text-align: center; padding: 60px; color: var(--text2); font-size: 1.1rem; display: none; }
-.loading { text-align: center; padding: 60px; color: var(--text2); font-size: 1rem; }
+/* MAIN */
+.main{padding:16px 20px}
+.view-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px}
+.view-table{display:none}
+.view-table.active{display:block}
+.view-grid.hidden{display:none}
 
-.card { background: var(--bg3); border: 1px solid var(--border); border-radius: 12px; padding: 18px; cursor: pointer; transition: all 0.2s; position: relative; overflow: hidden; }
-.card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--green), var(--cyan)); opacity: 0; transition: opacity 0.2s; }
-.card:hover { border-color: var(--cyan); transform: translateY(-2px); box-shadow: var(--shadow); }
-.card:hover::before { opacity: 1; }
-.card-badges { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
-.badge { padding: 2px 7px; border-radius: 4px; font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.4px; }
-.badge-cat { background: rgba(168,85,247,0.2); color: var(--purple); border: 1px solid rgba(168,85,247,0.3); }
-.badge-platform { background: rgba(0,212,255,0.15); color: var(--cyan); border: 1px solid rgba(0,212,255,0.3); }
-.badge-vol-Low { background: rgba(0,255,136,0.15); color: var(--green); border: 1px solid rgba(0,255,136,0.3); }
-.badge-vol-High { background: rgba(255,71,87,0.15); color: var(--red); border: 1px solid rgba(255,71,87,0.3); }
-.badge-vol-Medium { background: rgba(255,215,0,0.15); color: var(--yellow); border: 1px solid rgba(255,215,0,0.3); }
-.badge-vol-Unknown { background: rgba(154,163,184,0.1); color: var(--text2); border: 1px solid rgba(154,163,184,0.2); }
-.badge-dur-High { background: rgba(0,255,136,0.15); color: var(--green); border: 1px solid rgba(0,255,136,0.3); }
-.badge-dur-Medium { background: rgba(255,215,0,0.15); color: var(--yellow); border: 1px solid rgba(255,215,0,0.3); }
-.badge-dur-Low { background: rgba(255,71,87,0.15); color: var(--red); border: 1px solid rgba(255,71,87,0.3); }
-.badge-dur-Unknown { background: rgba(154,163,184,0.1); color: var(--text2); border: 1px solid rgba(154,163,184,0.2); }
-.card h3 { font-size: 0.93rem; font-weight: 600; color: var(--text); margin-bottom: 8px; line-height: 1.4; }
-.card-summary { font-size: 0.81rem; color: var(--text2); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-.card-footer { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
-.card-role { font-size: 0.72rem; color: var(--orange); }
-.card-cta { font-size: 0.72rem; color: var(--cyan); opacity: 0.7; }
+/* TABLE VIEW */
+.strategy-table{width:100%;border-collapse:collapse;font-size:0.82rem}
+.strategy-table th{background:var(--bg3);color:var(--cyan);padding:9px 12px;text-align:left;border-bottom:2px solid var(--border2);cursor:pointer;user-select:none;white-space:nowrap}
+.strategy-table th:hover{color:var(--green)}
+.strategy-table th .sort-icon{margin-left:4px;opacity:0.5}
+.strategy-table th.sorted .sort-icon{opacity:1;color:var(--yellow)}
+.strategy-table td{padding:8px 12px;border-bottom:1px solid var(--border);vertical-align:middle}
+.strategy-table tr:hover td{background:rgba(255,255,255,0.02);cursor:pointer}
+.table-title{color:var(--text);font-weight:500}
+.table-cat{font-size:0.72rem;padding:2px 6px;border-radius:4px;font-weight:600}
 
-.modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 1000; padding: 20px; overflow-y: auto; }
-.modal-overlay.active { display: flex; align-items: flex-start; justify-content: center; }
-.modal { background: var(--bg2); border: 1px solid var(--border); border-radius: 16px; width: 100%; max-width: 900px; margin: auto; position: relative; }
-.modal-header { background: linear-gradient(135deg, var(--bg3), var(--bg4)); padding: 20px 24px; border-bottom: 1px solid var(--border); border-radius: 16px 16px 0 0; }
-.modal-header h2 { font-size: 1.1rem; font-weight: 700; color: var(--text); margin-bottom: 8px; padding-right: 40px; }
-.modal-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
-.modal-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px; margin-top: 12px; }
-.modal-meta-item { background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 8px 12px; }
-.modal-meta-item .label { font-size: 0.68rem; color: var(--text2); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px; }
-.modal-meta-item .value { font-size: 0.82rem; color: var(--text); font-weight: 500; }
-.modal-close { position: absolute; top: 16px; right: 16px; background: var(--bg); border: 1px solid var(--border); color: var(--text); width: 32px; height: 32px; border-radius: 50%; cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; }
-.modal-close:hover { background: var(--red); border-color: var(--red); }
-.modal-body { padding: 24px; }
-.modal-tabs { display: flex; gap: 4px; margin-bottom: 20px; border-bottom: 1px solid var(--border); }
-.modal-tab { padding: 8px 16px; font-size: 0.85rem; color: var(--text2); cursor: pointer; border: none; border-bottom: 2px solid transparent; background: none; transition: all 0.2s; }
-.modal-tab.active { color: var(--cyan); border-bottom-color: var(--cyan); }
-.tab-content { display: none; }
-.tab-content.active { display: block; }
+/* CARDS */
+.card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:16px;cursor:pointer;transition:all var(--transition);position:relative;overflow:hidden;outline:none}
+.card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--cat-color,var(--green));border-radius:var(--radius) 0 0 var(--radius)}
+.card:hover,.card:focus{border-color:rgba(0,212,255,0.4);transform:translateY(-2px);box-shadow:var(--shadow)}
+.card-badges{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:9px;padding-left:8px}
+.badge{padding:2px 7px;border-radius:4px;font-size:0.68rem;font-weight:600;text-transform:uppercase;letter-spacing:0.3px}
+.badge-platform-Polymarket{background:rgba(0,255,136,0.15);color:var(--green);border:1px solid rgba(0,255,136,0.3)}
+.badge-platform-Kalshi{background:rgba(0,212,255,0.15);color:var(--cyan);border:1px solid rgba(0,212,255,0.3)}
+.badge-platform-Architecture{background:rgba(255,215,0,0.15);color:var(--yellow);border:1px solid rgba(255,215,0,0.3)}
+.badge-platform-GitHub{background:rgba(100,116,139,0.2);color:#94a3b8;border:1px solid rgba(100,116,139,0.3)}
+.badge-platform-Other{background:rgba(71,85,105,0.2);color:#94a3b8;border:1px solid rgba(71,85,105,0.3)}
+.badge-platform-default{background:rgba(168,85,247,0.15);color:var(--purple);border:1px solid rgba(168,85,247,0.3)}
+.badge-vol-Low{background:rgba(0,255,136,0.12);color:var(--green);border:1px solid rgba(0,255,136,0.25)}
+.badge-vol-High{background:rgba(255,71,87,0.12);color:var(--red);border:1px solid rgba(255,71,87,0.25)}
+.badge-vol-Medium{background:rgba(255,215,0,0.12);color:var(--yellow);border:1px solid rgba(255,215,0,0.25)}
+.badge-dur-High{background:rgba(0,255,136,0.12);color:var(--green);border:1px solid rgba(0,255,136,0.25)}
+.badge-dur-Medium{background:rgba(255,215,0,0.12);color:var(--yellow);border:1px solid rgba(255,215,0,0.25)}
+.badge-dur-Low{background:rgba(255,71,87,0.12);color:var(--red);border:1px solid rgba(255,71,87,0.25)}
+.badge-tax{background:rgba(255,140,0,0.12);color:var(--orange);border:1px solid rgba(255,140,0,0.25)}
+.card-title{font-size:0.9rem;font-weight:600;color:var(--text);margin-bottom:7px;padding-left:8px;line-height:1.4}
+.card-summary{font-size:0.79rem;color:var(--text2);line-height:1.55;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;padding-left:8px}
+.card-footer{margin-top:11px;padding:9px 8px 0;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:8px}
+.card-role{font-size:0.71rem;color:var(--orange)}
+.card-diff{display:flex;align-items:center;gap:5px;font-size:0.71rem;color:var(--text3)}
+.diff-bar{width:40px;height:4px;background:var(--bg5);border-radius:2px;overflow:hidden}
+.diff-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--yellow),var(--red));border-radius:2px}
+.card-star{background:none;border:none;cursor:pointer;font-size:0.9rem;color:var(--text3);padding:0;transition:color var(--transition);line-height:1}
+.card-star.starred{color:var(--yellow)}
+.card-star:hover{color:var(--yellow)}
+.no-results{text-align:center;padding:60px;color:var(--text2);grid-column:1/-1;display:none}
+.skeleton{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:16px;animation:pulse 1.5s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}
+.skel-line{background:var(--bg5);border-radius:4px;height:12px;margin-bottom:8px}
 
-.md-content { line-height: 1.7; color: var(--text); }
-.md-content h1, .md-content h2 { color: var(--cyan); margin: 20px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
-.md-content h3 { color: var(--green); margin: 16px 0 8px; }
-.md-content h4, .md-content h5 { color: var(--yellow); margin: 12px 0 6px; }
-.md-content p { margin-bottom: 12px; }
-.md-content ul, .md-content ol { margin: 8px 0 12px 20px; }
-.md-content li { margin-bottom: 4px; }
-.md-content code { background: var(--bg4); color: var(--green); padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 0.85em; }
-.md-content pre { background: var(--bg4); border: 1px solid var(--border); border-radius: 8px; padding: 16px; overflow-x: auto; margin: 12px 0; }
-.md-content pre code { background: none; padding: 0; }
-.md-content blockquote { border-left: 3px solid var(--cyan); padding-left: 16px; color: var(--text2); margin: 12px 0; }
-.md-content table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.85rem; }
-.md-content th { background: var(--bg4); color: var(--cyan); padding: 8px 12px; text-align: left; border: 1px solid var(--border); }
-.md-content td { padding: 7px 12px; border: 1px solid var(--border); }
-.md-content tr:nth-child(even) { background: rgba(255,255,255,0.02); }
-.md-content a { color: var(--cyan); text-decoration: none; }
-.md-content a:hover { text-decoration: underline; }
-.md-content strong { color: var(--green); }
-.md-content hr { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:1000;padding:16px;overflow-y:auto}
+.modal-overlay.active{display:flex;align-items:flex-start;justify-content:center}
+.modal{background:var(--bg2);border:1px solid var(--border2);border-radius:14px;width:100%;max-width:920px;margin:auto;position:relative;box-shadow:0 24px 80px rgba(0,0,0,0.8)}
+.modal-header{background:linear-gradient(135deg,var(--bg3),var(--bg4));padding:18px 22px;border-bottom:1px solid var(--border);border-radius:14px 14px 0 0}
+.modal-header h2{font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:8px;padding-right:80px;line-height:1.4}
+.modal-badges{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}
+.modal-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:7px;margin-top:10px}
+.modal-meta-item{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:7px 10px}
+.modal-meta-item .label{font-size:0.66rem;color:var(--text3);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:2px}
+.modal-meta-item .value{font-size:0.8rem;color:var(--text);font-weight:500}
+.modal-nav{position:absolute;top:16px;right:50px;display:flex;gap:4px}
+.modal-nav button,.modal-close{background:var(--bg);border:1px solid var(--border);color:var(--text2);width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:0.85rem;display:flex;align-items:center;justify-content:center;transition:all var(--transition)}
+.modal-nav button:hover,.modal-close:hover{background:var(--cyan);border-color:var(--cyan);color:var(--bg)}
+.modal-close{position:absolute;top:16px;right:16px}
+.modal-close:hover{background:var(--red);border-color:var(--red)}
+.modal-body{padding:20px 22px}
+.modal-tabs{display:flex;gap:2px;margin-bottom:16px;border-bottom:1px solid var(--border)}
+.modal-tab{padding:7px 14px;font-size:0.82rem;color:var(--text2);cursor:pointer;border:none;border-bottom:2px solid transparent;background:none;transition:all var(--transition)}
+.modal-tab.active{color:var(--cyan);border-bottom-color:var(--cyan)}
+.tab-pane{display:none}
+.tab-pane.active{display:block}
+.modal-footer{padding:12px 22px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.modal-counter{font-size:0.78rem;color:var(--text3)}
+.modal-nav-btns{display:flex;gap:8px}
+.btn-nav{background:var(--bg3);border:1px solid var(--border2);color:var(--text2);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:0.8rem;transition:all var(--transition)}
+.btn-nav:hover:not(:disabled){border-color:var(--cyan);color:var(--cyan)}
+.btn-nav:disabled{opacity:0.3;cursor:not-allowed}
 
-.impl-section h3 { color: var(--green); margin-bottom: 12px; font-size: 0.95rem; }
-.impl-step { display: flex; gap: 12px; margin-bottom: 10px; align-items: flex-start; }
-.impl-step-num { background: var(--green); color: var(--bg); width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
-.impl-step-text { font-size: 0.85rem; color: var(--text); line-height: 1.5; }
-.impl-empty { color: var(--text2); font-size: 0.85rem; font-style: italic; }
+/* MARKDOWN */
+.md-content{line-height:1.72;color:var(--text);font-size:0.85rem}
+.md-content h1,.md-content h2{color:var(--cyan);margin:18px 0 9px;padding-bottom:5px;border-bottom:1px solid var(--border);font-size:1rem}
+.md-content h3{color:var(--green);margin:14px 0 7px;font-size:0.92rem}
+.md-content h4,.md-content h5{color:var(--yellow);margin:10px 0 5px;font-size:0.85rem}
+.md-content p{margin-bottom:10px}
+.md-content ul,.md-content ol{margin:6px 0 10px 18px}
+.md-content li{margin-bottom:3px}
+.md-content code{background:var(--bg4);color:var(--green);padding:1px 5px;border-radius:3px;font-family:'Cascadia Code','Fira Code',monospace;font-size:0.82em}
+.md-content pre{background:var(--bg4);border:1px solid var(--border);border-radius:7px;padding:14px;overflow-x:auto;margin:10px 0;position:relative}
+.md-content pre code{background:none;padding:0;color:var(--green)}
+.copy-btn{position:absolute;top:8px;right:8px;background:var(--bg5);border:1px solid var(--border);color:var(--text3);padding:3px 8px;border-radius:4px;cursor:pointer;font-size:0.7rem;transition:all var(--transition)}
+.copy-btn:hover{border-color:var(--cyan);color:var(--cyan)}
+.md-content blockquote{border-left:3px solid var(--cyan);padding-left:14px;color:var(--text2);margin:10px 0}
+.md-content table{width:100%;border-collapse:collapse;margin:10px 0;font-size:0.8rem}
+.md-content th{background:var(--bg4);color:var(--cyan);padding:7px 10px;text-align:left;border:1px solid var(--border)}
+.md-content td{padding:6px 10px;border:1px solid var(--border)}
+.md-content tr:nth-child(even){background:rgba(255,255,255,0.02)}
+.md-content a{color:var(--cyan);text-decoration:none}
+.md-content a:hover{text-decoration:underline}
+.md-content strong{color:var(--green)}
+.md-content hr{border:none;border-top:1px solid var(--border);margin:16px 0}
 
-.footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 16px 24px; text-align: center; color: var(--text2); font-size: 0.8rem; margin-top: 40px; }
-.footer a { color: var(--cyan); text-decoration: none; }
+/* IMPL STEPS */
+.impl-step{display:flex;gap:10px;margin-bottom:9px;align-items:flex-start}
+.impl-num{background:var(--green);color:var(--bg);width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.72rem;font-weight:700;flex-shrink:0;margin-top:2px}
+.impl-text{font-size:0.83rem;color:var(--text);line-height:1.5}
+.impl-empty{color:var(--text2);font-size:0.83rem;font-style:italic}
 
-@media (max-width: 768px) {
-  .header-top { flex-direction: column; align-items: flex-start; }
-  .search-wrap input { width: 100%; }
-  .filters-bar { flex-direction: column; align-items: flex-start; }
-  .filter-group { width: 100%; }
-  .filters-bar select { width: 100%; }
-  .btn-reset { margin-left: 0; width: 100%; }
-  .grid { grid-template-columns: 1fr; }
-  .modal { border-radius: 12px; }
-  .modal-meta { grid-template-columns: 1fr 1fr; }
+/* FOOTER */
+.footer{background:var(--bg2);border-top:1px solid var(--border);padding:14px 20px;text-align:center;color:var(--text3);font-size:0.77rem;margin-top:32px}
+.footer a{color:var(--cyan);text-decoration:none}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--cyan)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .header-row{flex-direction:column;align-items:flex-start}
+  .search-wrap input{width:100%}
+  .view-grid{grid-template-columns:1fr}
+  .modal{border-radius:10px}
+  .modal-meta{grid-template-columns:1fr 1fr}
+  .header-actions{flex-wrap:wrap}
 }
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: var(--cyan); }
 </style>
 </head>
 <body>
 
 <div class="header">
-  <div class="header-top">
-    <div>
-      <h1>🚀 Polymarket &amp; Claude AI Trading Research Dashboard</h1>
-      <p>51 strategies, ideas, and research entries — click any card to read the full source</p>
-    </div>
+  <div class="header-row">
+    <div class="logo">🚀 Polymarket &amp; Claude AI Trading Dashboard</div>
+    <div class="header-meta" id="header-meta">Loading...</div>
     <div class="search-wrap">
-      <span class="search-icon">🔍</span>
-      <input type="text" id="search" placeholder="Search strategies, platforms, ideas..." oninput="renderCards()">
+      <span class="search-icon">⌕</span>
+      <input type="text" id="search" placeholder="Search... (press / to focus)" autocomplete="off">
+    </div>
+    <div class="header-actions">
+      <button class="btn-icon active" id="btn-grid" onclick="setView('grid')">⊞ Grid</button>
+      <button class="btn-icon" id="btn-table" onclick="setView('table')">≡ Table</button>
+      <button class="btn-icon" id="btn-favs" onclick="toggleFavs()">⭐ Favs</button>
+      <button class="btn-icon" onclick="exportFiltered()">↓ Export</button>
     </div>
   </div>
 </div>
 
 <div class="stats-bar" id="stats-bar">
-  <span class="total-count">Loading data...</span>
+  <span class="stat-count">Loading...</span>
 </div>
 
-<div class="filters-bar">
-  <div class="filter-group"><label>Category:</label>
-    <select id="f-category" onchange="renderCards()">
-<option value="">All Categories</option>
-<option value=""></option>
-<option value="Agent Architecture">Agent Architecture</option>
-<option value="Claude Trading Setup">Claude Trading Setup</option>
-<option value="GitHub Repo">GitHub Repo</option>
-<option value="Grok AI Ideas">Grok AI Ideas</option>
-<option value="Kalshi Strategy">Kalshi Strategy</option>
-<option value="LLM Architecture">LLM Architecture</option>
-<option value="Opus Analysis">Opus Analysis</option>
-<option value="Polymarket Strategy">Polymarket Strategy</option>
-<option value="Raw Source">Raw Source</option>
-<option value="Weather/Data Edge">Weather/Data Edge</option>
-    </select></div>
-  <div class="filter-group"><label>Platform:</label>
-    <select id="f-platform" onchange="renderCards()">
-<option value="">All Platforms</option>
-<option value="AI Analysis">AI Analysis</option>
-<option value="Architecture">Architecture</option>
-<option value="Both">Both</option>
-<option value="Claude Trading">Claude Trading</option>
-<option value="GitHub Repo">GitHub Repo</option>
-<option value="Kalshi">Kalshi</option>
-<option value="Other">Other</option>
-<option value="Polymarket">Polymarket</option>
-<option value="Raw Source">Raw Source</option>
-<option value="Weather/Data">Weather/Data</option>
-    </select></div>
-  <div class="filter-group"><label>Volume:</label>
-    <select id="f-volume" onchange="renderCards()">
-<option value="">All Volumes</option>
-<option value="Low">Low</option>
-<option value="Medium">Medium</option>
-<option value="High">High</option>
-<option value="Unknown">Unknown</option>
-    </select></div>
-  <div class="filter-group"><label>Durability:</label>
-    <select id="f-durability" onchange="renderCards()">
-<option value="">All Durability</option>
-<option value="High">High</option>
-<option value="Medium">Medium</option>
-<option value="Low">Low</option>
-<option value="Unknown">Unknown</option>
-    </select></div>
-  <div class="filter-group"><label>Claude Role:</label>
-    <select id="f-role" onchange="renderCards()">
-<option value="">All Roles</option>
-<option value="Arbitrage Detection">Arbitrage Detection</option>
-<option value="Architecture Design">Architecture Design</option>
-<option value="Data Synthesis">Data Synthesis</option>
-<option value="Orchestrator/CEO">Orchestrator/CEO</option>
-<option value="Research/Analysis">Research/Analysis</option>
-<option value="Second Brain">Second Brain</option>
-    </select></div>
-  <button class="btn-reset" onclick="resetFilters()">✕ Reset</button>
+<div class="filter-bar">
+  <div class="filter-row">
+    <span class="filter-label">Category</span>
+    <div id="chips-category"><button class="chip" data-dim="category" data-val=""></button><button class="chip" data-dim="category" data-val="Agent Architecture">Agent Architecture</button><button class="chip" data-dim="category" data-val="Claude Trading Setup">Claude Trading Setup</button><button class="chip" data-dim="category" data-val="GitHub Repo">GitHub Repo</button><button class="chip" data-dim="category" data-val="Grok AI Ideas">Grok AI Ideas</button><button class="chip" data-dim="category" data-val="Kalshi Strategy">Kalshi Strategy</button><button class="chip" data-dim="category" data-val="LLM Architecture">LLM Architecture</button><button class="chip" data-dim="category" data-val="Opus Analysis">Opus Analysis</button><button class="chip" data-dim="category" data-val="Polymarket Strategy">Polymarket Strategy</button><button class="chip" data-dim="category" data-val="Raw Source">Raw Source</button><button class="chip" data-dim="category" data-val="Weather/Data Edge">Weather/Data Edge</button></div>
+  </div>
+  <div class="filter-row">
+    <span class="filter-label">Platform</span>
+    <div id="chips-platform"><button class="chip" data-dim="platform" data-val="AI Analysis">AI Analysis</button><button class="chip" data-dim="platform" data-val="Architecture">Architecture</button><button class="chip" data-dim="platform" data-val="GitHub">GitHub</button><button class="chip" data-dim="platform" data-val="Kalshi">Kalshi</button><button class="chip" data-dim="platform" data-val="Other">Other</button><button class="chip" data-dim="platform" data-val="Polymarket">Polymarket</button><button class="chip" data-dim="platform" data-val="Stocks/Options/Futures">Stocks/Options/Futures</button><button class="chip" data-dim="platform" data-val="Weather/Data">Weather/Data</button></div>
+  </div>
+  <div class="filter-row">
+    <span class="filter-label">Volume</span>
+    <div id="chips-volume"><button class="chip" data-dim="volume" data-val="Low">Low</button><button class="chip" data-dim="volume" data-val="Medium">Medium</button><button class="chip" data-dim="volume" data-val="High">High</button><button class="chip" data-dim="volume" data-val="Unknown">Unknown</button></div>
+    <span class="filter-label" style="margin-left:16px">Durability</span>
+    <div id="chips-durability"><button class="chip" data-dim="durability" data-val="High">High</button><button class="chip" data-dim="durability" data-val="Medium">Medium</button><button class="chip" data-dim="durability" data-val="Low">Low</button><button class="chip" data-dim="durability" data-val="Unknown">Unknown</button></div>
+  </div>
+  <div class="filter-row">
+    <span class="filter-label">Claude Role</span>
+    <div id="chips-role"><button class="chip" data-dim="role" data-val="Arbitrage Detection">Arbitrage Detection</button><button class="chip" data-dim="role" data-val="Architecture Design">Architecture Design</button><button class="chip" data-dim="role" data-val="Bot Execution">Bot Execution</button><button class="chip" data-dim="role" data-val="Data Synthesis">Data Synthesis</button><button class="chip" data-dim="role" data-val="Orchestrator/CEO">Orchestrator/CEO</button><button class="chip" data-dim="role" data-val="Research/Analysis">Research/Analysis</button><button class="chip" data-dim="role" data-val="Second Brain">Second Brain</button></div>
+  </div>
+  <div class="filter-row">
+    <span class="filter-label">Presets</span>
+    <div class="filter-presets">
+      <button class="preset-btn" onclick="applyPreset('lowhanging')">🎯 Low-Hanging Fruit</button>
+      <button class="preset-btn" onclick="applyPreset('botready')">⚡ Bot-Ready</button>
+      <button class="preset-btn" onclick="applyPreset('arbitrage')">💰 Arbitrage</button>
+      <button class="preset-btn" onclick="applyPreset('lowtax')">📋 Low Tax</button>
+    </div>
+    <button class="btn-clear" onclick="clearAll()">✕ Clear All</button>
+  </div>
 </div>
 
 <div class="main">
-  <div class="grid" id="card-grid">
-    <div class="loading" style="grid-column:1/-1">Loading 51 research entries...</div>
+  <div class="view-grid" id="card-grid">
+    <div class="skeleton"><div class="skel-line" style="width:60%"></div><div class="skel-line" style="width:90%"></div><div class="skel-line" style="width:75%"></div></div><div class="skeleton"><div class="skel-line" style="width:60%"></div><div class="skel-line" style="width:90%"></div><div class="skel-line" style="width:75%"></div></div><div class="skeleton"><div class="skel-line" style="width:60%"></div><div class="skel-line" style="width:90%"></div><div class="skel-line" style="width:75%"></div></div><div class="skeleton"><div class="skel-line" style="width:60%"></div><div class="skel-line" style="width:90%"></div><div class="skel-line" style="width:75%"></div></div><div class="skeleton"><div class="skel-line" style="width:60%"></div><div class="skel-line" style="width:90%"></div><div class="skel-line" style="width:75%"></div></div><div class="skeleton"><div class="skel-line" style="width:60%"></div><div class="skel-line" style="width:90%"></div><div class="skel-line" style="width:75%"></div></div><div class="skeleton"><div class="skel-line" style="width:60%"></div><div class="skel-line" style="width:90%"></div><div class="skel-line" style="width:75%"></div></div><div class="skeleton"><div class="skel-line" style="width:60%"></div><div class="skel-line" style="width:90%"></div><div class="skel-line" style="width:75%"></div></div><div class="skeleton"><div class="skel-line" style="width:60%"></div><div class="skel-line" style="width:90%"></div><div class="skel-line" style="width:75%"></div></div>
   </div>
-  <div class="no-results" id="no-results">No entries match your filters. <a href="#" onclick="resetFilters();return false;" style="color:var(--cyan)">Reset filters</a></div>
+  <div class="view-table" id="table-view">
+    <table class="strategy-table" id="strategy-table">
+      <thead>
+        <tr>
+          <th onclick="sortBy('title')">Title <span class="sort-icon">↕</span></th>
+          <th onclick="sortBy('category')">Category <span class="sort-icon">↕</span></th>
+          <th onclick="sortBy('volume')">Volume <span class="sort-icon">↕</span></th>
+          <th onclick="sortBy('durability')">Durability <span class="sort-icon">↕</span></th>
+          <th onclick="sortBy('taxComplexity')">Tax <span class="sort-icon">↕</span></th>
+          <th onclick="sortBy('implementationDifficulty')">Difficulty <span class="sort-icon">↕</span></th>
+          <th>Claude Role</th>
+        </tr>
+      </thead>
+      <tbody id="table-body"></tbody>
+    </table>
+  </div>
 </div>
 
 <div class="footer">
-  <a href="https://github.com/speck0fdust34532/polymarket-claude-ideas-db" target="_blank">📦 GitHub Repository</a> &nbsp;|&nbsp;
-  51 entries across 10 categories &nbsp;|&nbsp; Architecture by Claude Opus 4.5
+  <a href="https://github.com/speck0fdust34532/polymarket-claude-ideas-db" target="_blank">📦 GitHub Repo</a> &nbsp;|&nbsp;
+  Architecture by <strong>claude-opus-4-6</strong> &nbsp;|&nbsp; 53 entries across 11 categories
 </div>
 
-<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+<!-- MODAL -->
+<div class="modal-overlay" id="modal-overlay" onclick="overlayClick(event)">
   <div class="modal" id="modal">
     <div class="modal-header">
-      <button class="modal-close" onclick="closeModalDirect()">✕</button>
+      <div class="modal-nav">
+        <button id="modal-prev" onclick="modalNav(-1)" title="Previous (←)">‹</button>
+        <button id="modal-next" onclick="modalNav(1)" title="Next (→)">›</button>
+      </div>
+      <button class="modal-close" onclick="closeModal()" title="Close (Esc)">✕</button>
       <h2 id="modal-title"></h2>
       <div class="modal-badges" id="modal-badges"></div>
       <div class="modal-meta" id="modal-meta"></div>
@@ -240,164 +296,464 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
     <div class="modal-body">
       <div class="modal-tabs">
         <button class="modal-tab active" onclick="switchTab('content',this)">📄 Full Content</button>
-        <button class="modal-tab" onclick="switchTab('impl',this)">🛠 Implementation Steps</button>
+        <button class="modal-tab" onclick="switchTab('impl',this)">🛠 Implementation</button>
+        <button class="modal-tab" onclick="switchTab('meta',this)">📊 Metadata</button>
       </div>
-      <div class="tab-content active" id="tab-content">
-        <div class="md-content" id="modal-content"></div>
-      </div>
-      <div class="tab-content" id="tab-impl">
-        <div id="modal-impl"></div>
+      <div class="tab-pane active" id="tab-content"><div class="md-content" id="modal-content"></div></div>
+      <div class="tab-pane" id="tab-impl"><div id="modal-impl"></div></div>
+      <div class="tab-pane" id="tab-meta"><div id="modal-meta-full"></div></div>
+    </div>
+    <div class="modal-footer">
+      <span class="modal-counter" id="modal-counter"></span>
+      <div class="modal-nav-btns">
+        <button class="btn-nav" id="foot-prev" onclick="modalNav(-1)">← Prev</button>
+        <button class="btn-nav" id="foot-next" onclick="modalNav(1)">Next →</button>
       </div>
     </div>
   </div>
 </div>
 
 <script>
+// ─── DATA & STATE ───────────────────────────────────────────────
 let DB = [];
+let filtered = [];
+let currentView = 'grid';
+let showFavsOnly = false;
+let sortField = 'title';
+let sortDir = 'asc';
+let activeTab = 'content';
+let modalIdx = -1;
+let searchTimer = null;
 
-function badge(text, type) {
-  if (!text || text === 'Unknown') return '';
-  let cls = 'badge ';
-  if (type === 'cat') cls += 'badge-cat';
-  else if (type === 'platform') cls += 'badge-platform';
-  else if (type === 'vol') cls += 'badge-vol-' + text;
-  else if (type === 'dur') cls += 'badge-dur-' + text;
-  return `<span class="${cls}">${text}</span>`;
+const filters = {
+  category: new Set(),
+  platform: new Set(),
+  volume: new Set(),
+  durability: new Set(),
+  role: new Set()
+};
+
+const FAVS_KEY = 'pm_dashboard_favs';
+let favs = new Set(JSON.parse(localStorage.getItem(FAVS_KEY) || '[]'));
+
+// ─── MARKDOWN RENDERER (lightweight, no CDN) ────────────────────
+function renderMd(text) {
+  if (!text) return '';
+  let html = text
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/```([\s\S]*?)```/g, (_, code) =>
+      `<pre><code>${code.trim()}</code><button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>`)
+    .replace(/`([^`]+)`/g, '<code>$1</code>')
+    .replace(/^#{5}\s+(.+)$/gm,'<h5>$1</h5>')
+    .replace(/^#{4}\s+(.+)$/gm,'<h4>$1</h4>')
+    .replace(/^#{3}\s+(.+)$/gm,'<h3>$1</h3>')
+    .replace(/^#{2}\s+(.+)$/gm,'<h2>$1</h2>')
+    .replace(/^#{1}\s+(.+)$/gm,'<h1>$1</h1>')
+    .replace(/^---+$/gm,'<hr>')
+    .replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>')
+    .replace(/\*([^*]+)\*/g,'<em>$1</em>')
+    .replace(/^>\s+(.+)$/gm,'<blockquote>$1</blockquote>')
+    .replace(/^\d+\.\s+(.+)$/gm,'<li>$1</li>')
+    .replace(/^[-*]\s+(.+)$/gm,'<li>$1</li>')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>')
+    .replace(/(<li>.*<\/li>\n?)+/g, m => `<ul>${m}</ul>`)
+    .replace(/\n\n/g,'</p><p>')
+    .replace(/\n/g,'<br>');
+  return `<p>${html}</p>`;
 }
 
-function renderCards() {
-  const search = document.getElementById('search').value.toLowerCase();
-  const fCat = document.getElementById('f-category').value;
-  const fPlat = document.getElementById('f-platform').value;
-  const fVol = document.getElementById('f-volume').value;
-  const fDur = document.getElementById('f-durability').value;
-  const fRole = document.getElementById('f-role').value;
+function copyCode(btn) {
+  const code = btn.previousElementSibling.textContent;
+  navigator.clipboard.writeText(code).then(() => {
+    btn.textContent = 'Copied!';
+    setTimeout(() => btn.textContent = 'Copy', 1500);
+  });
+}
 
-  const filtered = DB.filter(d => {
-    if (fCat && d.category !== fCat) return false;
-    if (fPlat && d.platform !== fPlat) return false;
-    if (fVol && d.volume !== fVol) return false;
-    if (fDur && d.durability !== fDur) return false;
-    if (fRole && d.claude_role !== fRole) return false;
+// ─── FILTER ENGINE ──────────────────────────────────────────────
+function applyFilters() {
+  const search = document.getElementById('search').value.toLowerCase().trim();
+  filtered = DB.filter(d => {
+    if (showFavsOnly && !favs.has(d.id)) return false;
+    if (filters.category.size && !filters.category.has(d.category)) return false;
+    if (filters.platform.size && !d.platforms.some(p => filters.platform.has(p))) return false;
+    if (filters.volume.size && !filters.volume.has(d.volume)) return false;
+    if (filters.durability.size && !filters.durability.has(d.durability)) return false;
+    if (filters.role.size && !filters.role.has(d.claudeRole)) return false;
     if (search) {
-      const hay = (d.title + ' ' + d.summary + ' ' + d.category + ' ' + d.platform).toLowerCase();
+      const hay = (d.title + ' ' + d.summary + ' ' + d.category + ' ' + d.tags.join(' ')).toLowerCase();
       if (!hay.includes(search)) return false;
     }
     return true;
   });
-
-  const grid = document.getElementById('card-grid');
-  const noRes = document.getElementById('no-results');
-
-  if (filtered.length === 0) {
-    grid.innerHTML = '';
-    noRes.style.display = 'block';
-  } else {
-    noRes.style.display = 'none';
-    grid.innerHTML = filtered.map(d => `
-      <div class="card" onclick="openModal(${JSON.stringify(d.id)})">
-        <div class="card-badges">
-          ${badge(d.category,'cat')}
-          ${badge(d.platform,'platform')}
-          ${d.volume!=='Unknown'?badge('Vol: '+d.volume,'vol'):''}
-          ${d.durability!=='Unknown'?badge('Dur: '+d.durability,'dur'):''}
-        </div>
-        <h3>${escHtml(d.title)}</h3>
-        <p class="card-summary">${escHtml(d.summary||'Click to read full content...')}</p>
-        <div class="card-footer">
-          <span class="card-role">🤖 ${escHtml(d.claude_role)}</span>
-          <span class="card-cta">Click to expand →</span>
-        </div>
-      </div>
-    `).join('');
-  }
-  updateStats(filtered);
+  // Sort
+  filtered.sort((a, b) => {
+    const av = a[sortField] ?? '';
+    const bv = b[sortField] ?? '';
+    const cmp = typeof av === 'number' ? av - bv : String(av).localeCompare(String(bv));
+    return sortDir === 'asc' ? cmp : -cmp;
+  });
+  syncHash();
+  render();
 }
 
-function escHtml(s) {
-  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+function render() {
+  renderStats();
+  if (currentView === 'grid') renderGrid();
+  else renderTable();
 }
 
-function updateStats(filtered) {
+// ─── STATS BAR ──────────────────────────────────────────────────
+function renderStats() {
   const cats = {};
   filtered.forEach(d => { cats[d.category] = (cats[d.category]||0)+1; });
-  const pills = Object.entries(cats).sort((a,b)=>b[1]-a[1]).slice(0,8)
-    .map(([c,n]) => `<span class="stat-pill">${escHtml(c)}: <span>${n}</span></span>`).join('');
+  const pills = Object.entries(cats).sort((a,b)=>b[1]-a[1]).slice(0,7)
+    .map(([c,n]) => `<span class="stat-pill" onclick="quickCat('${esc(c)}')">${esc(c)}: <span>${n}</span></span>`).join('');
   document.getElementById('stats-bar').innerHTML =
-    `<span class="total-count">${filtered.length} / ${DB.length} entries</span> ${pills}`;
+    `<span class="stat-count">${filtered.length} / ${DB.length} entries</span> ${pills}`;
+  document.getElementById('header-meta').textContent =
+    `${DB.length} entries · ${new Date().toLocaleDateString()}`;
 }
 
-function openModal(id) {
-  const d = DB.find(x => x.id === id);
+// ─── GRID VIEW ──────────────────────────────────────────────────
+function renderGrid() {
+  const grid = document.getElementById('card-grid');
+  if (filtered.length === 0) {
+    grid.innerHTML = '<div class="no-results" style="display:block">No entries match your filters. <a href="#" onclick="clearAll();return false;" style="color:var(--cyan)">Clear filters</a></div>';
+    return;
+  }
+  const frag = document.createDocumentFragment();
+  filtered.forEach((d, i) => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.tabIndex = 0;
+    card.dataset.id = d.id;
+    card.style.setProperty('--cat-color', d.categoryColor || '#475569');
+    const starred = favs.has(d.id);
+    const platBadges = d.platforms.slice(0,3).map(p =>
+      `<span class="badge badge-platform-${p.replace(/[^a-zA-Z]/g,'') || 'default'}">${esc(p)}</span>`).join('');
+    const volBadge = d.volume !== 'Unknown' ? `<span class="badge badge-vol-${d.volume}">Vol: ${d.volume}</span>` : '';
+    const durBadge = d.durability !== 'Unknown' ? `<span class="badge badge-dur-${d.durability}">Dur: ${d.durability}</span>` : '';
+    const taxBadge = d.taxComplexity !== 'Unknown' ? `<span class="badge badge-tax">${esc(d.taxComplexity)}</span>` : '';
+    const diffPct = (d.implementationDifficulty / 5) * 100;
+    const stepsCount = d.implementationSteps.length;
+    card.innerHTML = `
+      <div class="card-badges">${platBadges}${volBadge}${durBadge}${taxBadge}</div>
+      <div class="card-title">${esc(d.title)}</div>
+      <div class="card-summary">${esc(d.summary || 'Click to read full content...')}</div>
+      <div class="card-footer">
+        <span class="card-role">🤖 ${esc(d.claudeRole)}</span>
+        <span class="card-diff">
+          <span>Diff:</span>
+          <span class="diff-bar"><span class="diff-fill" style="width:${diffPct}%"></span></span>
+          <span>${d.implementationDifficulty}/5</span>
+        </span>
+        <span style="font-size:0.71rem;color:var(--text3)">${stepsCount ? stepsCount + ' steps' : '—'}</span>
+        <button class="card-star ${starred ? 'starred' : ''}" onclick="toggleFav(event,'${d.id}')" title="Star this entry">${starred ? '⭐' : '☆'}</button>
+      </div>`;
+    card.addEventListener('click', () => openModal(i));
+    card.addEventListener('keydown', e => { if (e.key === 'Enter') openModal(i); });
+    frag.appendChild(card);
+  });
+  grid.innerHTML = '';
+  grid.appendChild(frag);
+}
+
+// ─── TABLE VIEW ─────────────────────────────────────────────────
+function renderTable() {
+  const tbody = document.getElementById('table-body');
+  const rows = filtered.map((d, i) => {
+    const catColor = d.categoryColor || '#475569';
+    return `<tr onclick="openModal(${i})">
+      <td><span class="table-title">${esc(d.title)}</span></td>
+      <td><span class="table-cat badge" style="background:${catColor}22;color:${catColor};border:1px solid ${catColor}44">${esc(d.category)}</span></td>
+      <td>${d.volume !== 'Unknown' ? `<span class="badge badge-vol-${d.volume}">${d.volume}</span>` : '—'}</td>
+      <td>${d.durability !== 'Unknown' ? `<span class="badge badge-dur-${d.durability}">${d.durability}</span>` : '—'}</td>
+      <td style="font-size:0.78rem;color:var(--text2)">${esc(d.taxComplexity)}</td>
+      <td>
+        <span class="diff-bar" style="display:inline-block;vertical-align:middle">
+          <span class="diff-fill" style="width:${(d.implementationDifficulty/5)*100}%"></span>
+        </span>
+        <span style="font-size:0.75rem;color:var(--text2);margin-left:4px">${d.implementationDifficulty}/5</span>
+      </td>
+      <td style="font-size:0.78rem;color:var(--orange)">${esc(d.claudeRole)}</td>
+    </tr>`;
+  }).join('');
+  tbody.innerHTML = rows || '<tr><td colspan="7" style="text-align:center;color:var(--text2);padding:40px">No entries match filters</td></tr>';
+}
+
+// ─── MODAL ──────────────────────────────────────────────────────
+function openModal(idx) {
+  modalIdx = idx;
+  const d = filtered[idx];
   if (!d) return;
   document.getElementById('modal-title').textContent = d.title;
-  document.getElementById('modal-badges').innerHTML = [
-    badge(d.category,'cat'), badge(d.platform,'platform'),
-    d.volume!=='Unknown'?badge('Volume: '+d.volume,'vol'):'',
-    d.durability!=='Unknown'?badge('Durability: '+d.durability,'dur'):''
-  ].filter(Boolean).join('');
+  const platBadges = d.platforms.map(p =>
+    `<span class="badge badge-platform-${p.replace(/[^a-zA-Z]/g,'') || 'default'}">${esc(p)}</span>`).join('');
+  const volBadge = d.volume !== 'Unknown' ? `<span class="badge badge-vol-${d.volume}">Vol: ${d.volume}</span>` : '';
+  const durBadge = d.durability !== 'Unknown' ? `<span class="badge badge-dur-${d.durability}">Dur: ${d.durability}</span>` : '';
+  document.getElementById('modal-badges').innerHTML = platBadges + volBadge + durBadge;
   document.getElementById('modal-meta').innerHTML = `
-    <div class="modal-meta-item"><div class="label">Claude Role</div><div class="value">🤖 ${escHtml(d.claude_role)}</div></div>
-    <div class="modal-meta-item"><div class="label">Transaction Volume</div><div class="value">${escHtml(d.volume)}</div></div>
-    <div class="modal-meta-item"><div class="label">Durability</div><div class="value">${escHtml(d.durability)}</div></div>
-    <div class="modal-meta-item"><div class="label">Tax Note</div><div class="value" style="font-size:0.78rem;color:var(--text2)">${escHtml(d.tax)}</div></div>
-    <div class="modal-meta-item"><div class="label">File</div><div class="value" style="font-family:monospace;font-size:0.72rem;color:var(--text2)">${escHtml(d.path)}</div></div>
-  `;
-  document.getElementById('modal-content').innerHTML = marked.parse(d.full_content||'');
-  document.getElementById('modal-impl').innerHTML = extractImpl(d.full_content||'');
-  // Reset tabs
-  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
-  document.querySelectorAll('.modal-tab').forEach(t=>t.classList.remove('active'));
-  document.getElementById('tab-content').classList.add('active');
-  document.querySelectorAll('.modal-tab')[0].classList.add('active');
+    <div class="modal-meta-item"><div class="label">Claude Role</div><div class="value">🤖 ${esc(d.claudeRole)}</div></div>
+    <div class="modal-meta-item"><div class="label">Tax Complexity</div><div class="value">${esc(d.taxComplexity)}</div></div>
+    <div class="modal-meta-item"><div class="label">Durability</div><div class="value">${esc(d.durability)}</div></div>
+    <div class="modal-meta-item"><div class="label">Impl Difficulty</div><div class="value">${d.implementationDifficulty}/5</div></div>`;
+  document.getElementById('modal-content').innerHTML = renderMd(d.fullContent || '');
+  document.getElementById('modal-impl').innerHTML = renderImplSteps(d);
+  document.getElementById('modal-meta-full').innerHTML = renderMetaFull(d);
+  document.getElementById('modal-counter').textContent = `${idx + 1} of ${filtered.length}`;
+  document.getElementById('modal-prev').disabled = idx === 0;
+  document.getElementById('modal-next').disabled = idx === filtered.length - 1;
+  document.getElementById('foot-prev').disabled = idx === 0;
+  document.getElementById('foot-next').disabled = idx === filtered.length - 1;
+  // Restore active tab
+  document.querySelectorAll('.tab-pane').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.modal-tab').forEach(t => t.classList.remove('active'));
+  const tabEl = document.getElementById('tab-' + activeTab);
+  if (tabEl) tabEl.classList.add('active');
+  document.querySelectorAll('.modal-tab').forEach(t => {
+    if (t.getAttribute('onclick').includes(activeTab)) t.classList.add('active');
+  });
   document.getElementById('modal-overlay').classList.add('active');
   document.body.style.overflow = 'hidden';
 }
 
-function extractImpl(content) {
-  const steps = [];
-  const numbered = content.match(/^\d+[.)\s]+.+$/gm);
-  if (numbered) numbered.slice(0,12).forEach(s => {
-    const c = s.replace(/^\d+[.)\s]+/,'').replace(/\*+/g,'').trim();
-    if (c.length > 10) steps.push(c);
-  });
-  if (steps.length === 0) return '<p class="impl-empty">No explicit numbered steps found. See Full Content tab.</p>';
-  return '<h3>🛠 Implementation Steps</h3>' + [...new Set(steps)].slice(0,10).map((s,i) =>
-    `<div class="impl-step"><div class="impl-step-num">${i+1}</div><div class="impl-step-text">${escHtml(s)}</div></div>`
-  ).join('');
+function renderImplSteps(d) {
+  if (!d.implementationSteps || d.implementationSteps.length === 0)
+    return '<p class="impl-empty">No numbered implementation steps found in this entry. See the Full Content tab for details.</p>';
+  return '<h3 style="color:var(--green);margin-bottom:12px;font-size:0.9rem">🛠 Implementation Steps</h3>' +
+    d.implementationSteps.map((s, i) =>
+      `<div class="impl-step"><div class="impl-num">${i+1}</div><div class="impl-text">${esc(s)}</div></div>`
+    ).join('');
+}
+
+function renderMetaFull(d) {
+  const rows = [
+    ['Category', d.category], ['Platforms', d.platforms.join(', ')],
+    ['Transaction Volume', d.volume], ['Durability', d.durability],
+    ['Tax Complexity', d.taxComplexity], ['Claude Role', d.claudeRole],
+    ['Implementation Difficulty', d.implementationDifficulty + ' / 5'],
+    ['Implementation Steps', d.implementationSteps.length + ' steps found'],
+    ['Tags', d.tags.join(', ') || '—'],
+    ['File Path', d.path],
+    ['GitHub Link', `<a href="https://github.com/speck0fdust34532/polymarket-claude-ideas-db/blob/master/${d.path}" target="_blank">View on GitHub ↗</a>`]
+  ];
+  return '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">' +
+    rows.map(([k,v]) => `<div class="modal-meta-item"><div class="label">${k}</div><div class="value" style="font-size:0.78rem">${v}</div></div>`).join('') +
+    '</div>';
+}
+
+function modalNav(dir) {
+  const newIdx = modalIdx + dir;
+  if (newIdx >= 0 && newIdx < filtered.length) openModal(newIdx);
+}
+
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function overlayClick(e) {
+  if (e.target === document.getElementById('modal-overlay')) closeModal();
 }
 
 function switchTab(name, btn) {
-  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
-  document.querySelectorAll('.modal-tab').forEach(t=>t.classList.remove('active'));
-  document.getElementById('tab-'+name).classList.add('active');
+  activeTab = name;
+  document.querySelectorAll('.tab-pane').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.modal-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
   btn.classList.add('active');
 }
 
-function closeModal(e) { if (e.target===document.getElementById('modal-overlay')) closeModalDirect(); }
-function closeModalDirect() {
-  document.getElementById('modal-overlay').classList.remove('active');
-  document.body.style.overflow='';
-}
-document.addEventListener('keydown', e => { if(e.key==='Escape') closeModalDirect(); });
-
-function resetFilters() {
-  ['f-category','f-platform','f-volume','f-durability','f-role'].forEach(id => {
-    document.getElementById(id).value='';
+// ─── CHIP FILTERS ───────────────────────────────────────────────
+document.querySelectorAll('.chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    const dim = chip.dataset.dim;
+    const val = chip.dataset.val;
+    if (filters[dim].has(val)) filters[dim].delete(val);
+    else filters[dim].add(val);
+    chip.classList.toggle('active');
+    applyFilters();
   });
-  document.getElementById('search').value='';
-  renderCards();
+});
+
+function clearAll() {
+  Object.keys(filters).forEach(k => filters[k].clear());
+  document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+  document.getElementById('search').value = '';
+  showFavsOnly = false;
+  document.getElementById('btn-favs').classList.remove('active');
+  applyFilters();
 }
 
-// Load data
+function quickCat(cat) {
+  filters.category.clear();
+  filters.category.add(cat);
+  document.querySelectorAll('.chip[data-dim="category"]').forEach(c => {
+    c.classList.toggle('active', c.dataset.val === cat);
+  });
+  applyFilters();
+}
+
+function applyPreset(name) {
+  clearAll();
+  if (name === 'lowhanging') {
+    filters.volume.add('Low'); filters.durability.add('High');
+    document.querySelectorAll('.chip').forEach(c => {
+      if ((c.dataset.dim === 'volume' && c.dataset.val === 'Low') ||
+          (c.dataset.dim === 'durability' && c.dataset.val === 'High')) c.classList.add('active');
+    });
+  } else if (name === 'botready') {
+    filters.role.add('Bot Execution');
+    document.querySelectorAll('.chip[data-dim="role"][data-val="Bot Execution"]').forEach(c => c.classList.add('active'));
+  } else if (name === 'arbitrage') {
+    document.getElementById('search').value = 'arbitrage';
+  } else if (name === 'lowtax') {
+    document.getElementById('search').value = 'section 1256';
+  }
+  applyFilters();
+}
+
+// ─── SEARCH (DEBOUNCED) ─────────────────────────────────────────
+document.getElementById('search').addEventListener('input', () => {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(applyFilters, 250);
+});
+
+// ─── VIEW TOGGLE ────────────────────────────────────────────────
+function setView(v) {
+  currentView = v;
+  document.getElementById('card-grid').classList.toggle('hidden', v !== 'grid');
+  document.getElementById('table-view').classList.toggle('active', v === 'table');
+  document.getElementById('btn-grid').classList.toggle('active', v === 'grid');
+  document.getElementById('btn-table').classList.toggle('active', v === 'table');
+  render();
+}
+
+// ─── SORT ───────────────────────────────────────────────────────
+function sortBy(field) {
+  if (sortField === field) sortDir = sortDir === 'asc' ? 'desc' : 'asc';
+  else { sortField = field; sortDir = 'asc'; }
+  document.querySelectorAll('.strategy-table th').forEach(th => {
+    th.classList.remove('sorted');
+    const icon = th.querySelector('.sort-icon');
+    if (icon) icon.textContent = '↕';
+  });
+  const ths = document.querySelectorAll('.strategy-table th');
+  const fieldMap = ['title','category','volume','durability','taxComplexity','implementationDifficulty'];
+  const idx = fieldMap.indexOf(field);
+  if (idx >= 0 && ths[idx]) {
+    ths[idx].classList.add('sorted');
+    const icon = ths[idx].querySelector('.sort-icon');
+    if (icon) icon.textContent = sortDir === 'asc' ? '↑' : '↓';
+  }
+  applyFilters();
+}
+
+// ─── FAVORITES ──────────────────────────────────────────────────
+function toggleFav(e, id) {
+  e.stopPropagation();
+  if (favs.has(id)) favs.delete(id);
+  else favs.add(id);
+  localStorage.setItem(FAVS_KEY, JSON.stringify([...favs]));
+  applyFilters();
+}
+
+function toggleFavs() {
+  showFavsOnly = !showFavsOnly;
+  document.getElementById('btn-favs').classList.toggle('active', showFavsOnly);
+  applyFilters();
+}
+
+// ─── EXPORT ─────────────────────────────────────────────────────
+function exportFiltered() {
+  const data = filtered.map(d => ({
+    title: d.title, category: d.category, platforms: d.platforms,
+    volume: d.volume, durability: d.durability, taxComplexity: d.taxComplexity,
+    claudeRole: d.claudeRole, implementationDifficulty: d.implementationDifficulty,
+    summary: d.summary, tags: d.tags, path: d.path
+  }));
+  const blob = new Blob([JSON.stringify(data, null, 2)], {type: 'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'polymarket-strategies-filtered.json';
+  a.click();
+}
+
+// ─── URL HASH STATE ─────────────────────────────────────────────
+function syncHash() {
+  const params = new URLSearchParams();
+  Object.entries(filters).forEach(([k, v]) => {
+    if (v.size) params.set(k, [...v].join(','));
+  });
+  const search = document.getElementById('search').value.trim();
+  if (search) params.set('q', search);
+  if (showFavsOnly) params.set('favs', '1');
+  const hash = params.toString();
+  history.replaceState(null, '', hash ? '#' + hash : location.pathname);
+}
+
+function loadFromHash() {
+  const hash = location.hash.slice(1);
+  if (!hash) return;
+  const params = new URLSearchParams(hash);
+  ['category','platform','volume','durability','role'].forEach(dim => {
+    const val = params.get(dim);
+    if (val) {
+      val.split(',').forEach(v => {
+        filters[dim].add(v);
+        document.querySelectorAll(`.chip[data-dim="${dim}"][data-val="${v}"]`)
+          .forEach(c => c.classList.add('active'));
+      });
+    }
+  });
+  if (params.get('q')) document.getElementById('search').value = params.get('q');
+  if (params.get('favs')) { showFavsOnly = true; document.getElementById('btn-favs').classList.add('active'); }
+}
+
+// ─── KEYBOARD NAVIGATION ────────────────────────────────────────
+document.addEventListener('keydown', e => {
+  const overlay = document.getElementById('modal-overlay');
+  const isModalOpen = overlay.classList.contains('active');
+  const isSearchFocused = document.activeElement === document.getElementById('search');
+  if (e.key === 'Escape' && isModalOpen) { closeModal(); return; }
+  if (e.key === '/' && !isSearchFocused && !isModalOpen) {
+    e.preventDefault();
+    document.getElementById('search').focus();
+    return;
+  }
+  if (isModalOpen) {
+    if (e.key === 'ArrowLeft') { e.preventDefault(); modalNav(-1); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); modalNav(1); }
+    if (e.key === 'Tab' && !e.shiftKey) {
+      const tabs = ['content','impl','meta'];
+      const cur = tabs.indexOf(activeTab);
+      if (cur < tabs.length - 1) {
+        e.preventDefault();
+        const nextTab = tabs[cur + 1];
+        const btn = document.querySelector(`.modal-tab[onclick*="${nextTab}"]`);
+        if (btn) switchTab(nextTab, btn);
+      }
+    }
+  }
+});
+
+// ─── HELPER ─────────────────────────────────────────────────────
+function esc(s) {
+  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ─── INIT ────────────────────────────────────────────────────────
 fetch('data.json')
   .then(r => r.json())
   .then(data => {
     DB = data;
-    renderCards();
+    loadFromHash();
+    applyFilters();
   })
   .catch(err => {
-    document.getElementById('card-grid').innerHTML = '<div class="loading" style="grid-column:1/-1;color:var(--red)">Error loading data: ' + err.message + '</div>';
+    document.getElementById('card-grid').innerHTML =
+      `<div style="grid-column:1/-1;text-align:center;padding:60px;color:var(--red)">Failed to load data: ${err.message}</div>`;
   });
 </script>
 </body>
