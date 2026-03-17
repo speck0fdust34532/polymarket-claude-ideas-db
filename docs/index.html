@@ -32,7 +32,7 @@ html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,-apple-system,sans-serif;min-height:100vh;font-size:14px}
 
 /* HEADER */
-.header{background:linear-gradient(135deg,#0a1020 0%,#0d1830 100%);border-bottom:1px solid var(--border);padding:16px 20px;position:sticky;top:0;z-index:100;backdrop-filter:blur(8px)}
+.header{background:linear-gradient(135deg,#0a1020 0%,#0d1830 100%);border-bottom:1px solid var(--border);padding:16px 20px;position:relative;z-index:10;backdrop-filter:blur(8px)}
 .header-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .logo{font-size:1.2rem;font-weight:800;background:linear-gradient(90deg,var(--green),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;white-space:nowrap}
 .header-meta{color:var(--text2);font-size:0.78rem;flex:1}
@@ -47,14 +47,14 @@ body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,-ap
 .kbd-hint{font-size:0.68rem;color:var(--text3);background:var(--bg4);border:1px solid var(--border);border-radius:3px;padding:1px 4px}
 
 /* STATS BAR */
-.stats-bar{background:var(--bg2);border-bottom:1px solid var(--border);padding:8px 20px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;min-height:38px}
+.stats-bar{background:var(--bg2);border-bottom:1px solid var(--border);padding:8px 20px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;min-height:38px;position:relative;z-index:9}
 .stat-count{color:var(--green);font-weight:700;font-size:0.88rem;white-space:nowrap}
 .stat-pill{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:2px 9px;font-size:0.72rem;color:var(--text2);white-space:nowrap;cursor:pointer;transition:all var(--transition)}
 .stat-pill:hover{border-color:var(--cyan);color:var(--cyan)}
 .stat-pill span{color:var(--cyan);font-weight:700}
 
 /* FILTER BAR */
-.filter-bar{background:var(--bg2);border-bottom:1px solid var(--border);padding:10px 20px}
+.filter-bar{background:var(--bg2);border-bottom:1px solid var(--border);padding:10px 20px;position:relative;z-index:8}
 .filter-row{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:6px}
 .filter-row:last-child{margin-bottom:0}
 .filter-label{font-size:0.72rem;color:var(--text3);text-transform:uppercase;letter-spacing:0.5px;min-width:70px;flex-shrink:0}
