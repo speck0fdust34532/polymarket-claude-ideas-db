@@ -2,17 +2,17 @@
 
 A comprehensive, living database of money-making ideas and strategies involving Claude AI, Polymarket, Kalshi, stocks, options, and futures trading. Includes architecture blueprints, raw source materials, and AI-generated analysis.
 
-**Last Updated:** 2026-03-16 | **Total Files:** 65+ | **Repo:** [speck0fdust34532/polymarket-claude-ideas-db](https://github.com/speck0fdust34532/polymarket-claude-ideas-db)
+**Last Updated:** 2026-03-17 | **Total Files:** 70+ | **Repo:** [speck0fdust34532/polymarket-claude-ideas-db](https://github.com/speck0fdust34532/polymarket-claude-ideas-db)
 
 ---
 
-## 🆕 New in This Update (2026-03-16)
+## 🆕 New in This Update (2026-03-17)
 
 | File | Description |
 |------|-------------|
-| [/polymarket-strategies/polycue-automated-trading.md](./polymarket-strategies/polycue-automated-trading.md) | Systematic trading framework for AMM, AI-Arb, Correlation-Arb, and Momentum. |
-| [/claude-trading-setups/prediction-market-ai-framework-2026.md](./claude-trading-setups/prediction-market-ai-framework-2026.md) | 4-pillar success framework for specialized AI prediction market trading. |
-| [/github-repos/cloddsbot-autonomous-agent.md](./github-repos/cloddsbot-autonomous-agent.md) | Open-source autonomous AI trading agent for 1000+ markets. |
+| [/claude-trading-setups/two-layer-ai-trading-blueprint.md](./claude-trading-setups/two-layer-ai-trading-blueprint.md) | Technical blueprint for a "Brain and Hands" architecture for autonomous trading. |
+| [/github-repos/event-edge-ai-tooling.md](./github-repos/event-edge-ai-tooling.md) | Specialized AI tooling for probability estimation and mispricing detection. |
+| [/raw-sources/pillarlab-reddit-analysis-2026.md](./raw-sources/pillarlab-reddit-analysis-2026.md) | Analysis of the "Pillar" system for multi-framework market evaluation. |
 
 ---
 
@@ -28,7 +28,7 @@ A comprehensive, living database of money-making ideas and strategies involving 
 - [GitHub Agent Hierarchy Research](./claude-hierarchy/github_hierarchy_research.md) — Deep analysis of 15+ GitHub repos implementing Claude multi-agent systems. Covers 5 architecture patterns with trading applicability ratings.
 
 ### [/polymarket-strategies/](./polymarket-strategies/)
-- [PolyCue Automated Trading Strategy](./polymarket-strategies/polycue-automated-trading.md) — **NEW**
+- [PolyCue Automated Trading Strategy](./polymarket-strategies/polycue-automated-trading.md)
 - [Automated Market Making Strategy](./polymarket-strategies/automated-market-making.md)
 - [Logical Arbitrage Strategy](./polymarket-strategies/logical-arbitrage.md)
 - [Ultra-Short Crypto Bets Strategy](./polymarket-strategies/ultra-short-crypto-bets.md)
@@ -50,7 +50,8 @@ A comprehensive, living database of money-making ideas and strategies involving 
 - [15 Best Claude Code Business Ideas for Developers](./kalshi-strategies/15-best-claude-code-business-ideas-for-developers-2026.md)
 
 ### [/claude-trading-setups/](./claude-trading-setups/)
-- [Prediction Market AI Framework (2026)](./claude-trading-setups/prediction-market-ai-framework-2026.md) — **NEW**
+- [Two-Layer AI Trading Blueprint](./claude-trading-setups/two-layer-ai-trading-blueprint.md) — **NEW**
+- [Prediction Market AI Framework (2026)](./claude-trading-setups/prediction-market-ai-framework-2026.md)
 - [Structured Macro Analysis with Claude 4.5](./claude-trading-setups/structured-macro-analysis-claude-4-5.md)
 - [Two-Layer AI System Setup](./claude-trading-setups/two-layer-ai-system.md)
 - [Claude as a Trading Second Brain](./claude-trading-setups/trading-second-brain.md)
@@ -67,7 +68,8 @@ A comprehensive, living database of money-making ideas and strategies involving 
 - [Hurricane Track Analysis for Weather Trading](./weather-data-edges/hurricane-tracks.md)
 
 ### [/github-repos/](./github-repos/)
-- [CloddsBot (Autonomous AI Trading Agent)](./github-repos/cloddsbot-autonomous-agent.md) — **NEW**
+- [Event Edge AI Tooling](./github-repos/event-edge-ai-tooling.md) — **NEW**
+- [CloddsBot (Autonomous AI Trading Agent)](./github-repos/cloddsbot-autonomous-agent.md)
 - [CloddsBot (Original Reference)](./github-repos/cloddsbot.md)
 - [last30days-skill (AI Agent Research Skill)](./github-repos/last30days-skill.md)
 - [Polymarket & Kalshi 15-Minute Arbitrage Bot](./github-repos/polymarket-kalshi-15min-arbitrage.md)
@@ -77,6 +79,7 @@ A comprehensive, living database of money-making ideas and strategies involving 
 - [Simmer SDK (Trading Skills)](./github-repos/simmer-sdk.md)
 
 ### [/raw-sources/](./raw-sources/)
+- [PillarLab Reddit Analysis 2026](./raw-sources/pillarlab-reddit-analysis-2026.md) — **NEW**
 - [Reddit AI Comparison 2026](./raw-sources/reddit-ai-comparison-2026.md)
 - [Medium Bot Strategies 2026](./raw-sources/medium-bot-strategies-2026.md)
 - [Weather Bot - Publish0x](./raw-sources/weather-bot-publish0x.md)
