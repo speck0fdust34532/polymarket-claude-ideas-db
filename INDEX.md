@@ -2,16 +2,17 @@
 
 A comprehensive, living database of money-making ideas and strategies involving Claude AI, Polymarket, Kalshi, stocks, options, and futures trading. Includes architecture blueprints, raw source materials, and AI-generated analysis.
 
-**Last Updated:** 2026-03-18 | **Total Files:** 75+ | **Repo:** [speck0fdust34532/polymarket-claude-ideas-db](https://github.com/speck0fdust34532/polymarket-claude-ideas-db)
+**Last Updated:** 2026-03-19 | **Total Files:** 80+ | **Repo:** [speck0fdust34532/polymarket-claude-ideas-db](https://github.com/speck0fdust34532/polymarket-claude-ideas-db)
 
 ---
 
-## 🆕 New in This Update (2026-03-18)
+## 🆕 New in This Update (2026-03-19)
 
 | File | Description |
 |------|-------------|
-| [/kalshi-strategies/kalshi-sports-robinhood-edge.md](./kalshi-strategies/kalshi-sports-robinhood-edge.md) | Strategies for Kalshi's new sports contracts and Robinhood retail integration. |
+| [/polymarket-strategies/weather-trading-bot-blueprint-2026.md](./polymarket-strategies/weather-trading-bot-blueprint-2026.md) | Blueprint for the only consistently profitable retail bot strategy in 2026. |
 | [/github-repos/last30days-skill-research-tool.md](./github-repos/last30days-skill-research-tool.md) | Multi-platform AI research skill for grounded market sentiment analysis. |
+| [/raw-sources/polymarket-ai-bot-reality-check-2026.md](./raw-sources/polymarket-ai-bot-reality-check-2026.md) | Brutal performance review of 7 different bot types with $9,200 in real capital. |
 
 ---
 
@@ -27,6 +28,7 @@ A comprehensive, living database of money-making ideas and strategies involving 
 - [GitHub Agent Hierarchy Research](./claude-hierarchy/github_hierarchy_research.md) — Deep analysis of 15+ GitHub repos implementing Claude multi-agent systems. Covers 5 architecture patterns with trading applicability ratings.
 
 ### [/polymarket-strategies/](./polymarket-strategies/)
+- [Weather Trading Bot Blueprint (2026)](./polymarket-strategies/weather-trading-bot-blueprint-2026.md) — **NEW**
 - [PolyCue Automated Trading Strategy](./polymarket-strategies/polycue-automated-trading.md)
 - [Automated Market Making Strategy](./polymarket-strategies/automated-market-making.md)
 - [Logical Arbitrage Strategy](./polymarket-strategies/logical-arbitrage.md)
@@ -40,7 +42,7 @@ A comprehensive, living database of money-making ideas and strategies involving 
 - [On-Chain Data Edge Strategy on Polymarket](./polymarket-strategies/on-chain-data-edge.md)
 
 ### [/kalshi-strategies/](./kalshi-strategies/)
-- [Kalshi Sports and Robinhood Integration Edge](./kalshi-strategies/kalshi-sports-robinhood-edge.md) — **NEW**
+- [Kalshi Sports and Robinhood Integration Edge](./kalshi-strategies/kalshi-sports-robinhood-edge.md)
 - [Kalshi Section 1256 Tax Edge](./kalshi-strategies/tax-advantages.md)
 - [Kalshi CFTC-Regulated Arbitrage](./kalshi-strategies/cftc-arbitrage.md)
 - [Polymarket vs Kalshi Arbitrage Opportunities 2026](./kalshi-strategies/polymarket-vs-kalshi-arbitrage-opportunities-2026.md)
@@ -80,6 +82,7 @@ A comprehensive, living database of money-making ideas and strategies involving 
 - [Simmer SDK (Trading Skills)](./github-repos/simmer-sdk.md)
 
 ### [/raw-sources/](./raw-sources/)
+- [Polymarket AI Bot Reality Check 2026](./raw-sources/polymarket-ai-bot-reality-check-2026.md) — **NEW**
 - [PillarLab Reddit Analysis 2026](./raw-sources/pillarlab-reddit-analysis-2026.md)
 - [Reddit AI Comparison 2026](./raw-sources/reddit-ai-comparison-2026.md)
 - [Medium Bot Strategies 2026](./raw-sources/medium-bot-strategies-2026.md)
