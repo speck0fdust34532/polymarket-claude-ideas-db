@@ -1,18 +1,26 @@
-# Polymarket & Claude AI Ideas Database
+# AI Automation Money-Making Ideas Database
 
-A comprehensive, living database of money-making ideas and strategies involving Claude AI, Polymarket, Kalshi, stocks, options, and futures trading. Includes architecture blueprints, raw source materials, and AI-generated analysis.
+A comprehensive, living database of money-making ideas and strategies involving Claude AI, Polymarket, Kalshi, sports betting, DeFi, freelance automation, e-commerce, affiliate marketing, options/futures, real estate, domain flipping, NFTs, rental arbitrage, and more. Includes architecture blueprints, raw source materials, and AI-generated analysis.
 
-**Last Updated:** 2026-03-21 | **Total Files:** 88+ | **Repo:** [speck0fdust34532/polymarket-claude-ideas-db](https://github.com/speck0fdust34532/polymarket-claude-ideas-db)
+**Last Updated:** 2026-03-25 | **Total Files:** 100+ | **Repo:** [speck0fdust34532/polymarket-claude-ideas-db](https://github.com/speck0fdust34532/polymarket-claude-ideas-db)
 
 ---
 
-## 🆕 New in This Update (2026-03-21)
+## 🆕 New in This Update (2026-03-25)
 
 | File | Description |
 |------|-------------|
-| [/github-repos/simmer-ai-agent-interface.md](./github-repos/simmer-ai-agent-interface.md) | The best prediction market interface for AI agents, featuring unified API, self-custody wallets, and installable trading skills. |
-| [/polymarket-strategies/bayesian-event-driven-arbitrage.md](./polymarket-strategies/bayesian-event-driven-arbitrage.md) | Modular, Rust-based architecture for real-time arbitrage using Bayesian probability modeling and Claude Code plugins. |
-| [/kalshi-strategies/high-probability-farming.md](./kalshi-strategies/high-probability-farming.md) | Consistent-yield strategy for Kalshi focusing on identifying and farming high-probability (>95%) macro and political markets. |
+| [/sports-betting/sports-arb-value-betting-bots.md](./sports-betting/sports-arb-value-betting-bots.md) | Cross-bookmaker arbitrage, AI value betting (60–75% accuracy), and directional arb on Polymarket sports markets. |
+| [/defi-crypto/defi-yield-mev-liquidity.md](./defi-crypto/defi-yield-mev-liquidity.md) | Autonomous BTC yield farming on Base, MEV bot strategies, and concentrated liquidity provision automation. |
+| [/freelance-automation/ai-agent-gig-work.md](./freelance-automation/ai-agent-gig-work.md) | AI agents doing gig work on Upwork/Fiverr: chatbot setup, lead gen, content pipelines, and missed call automation. |
+| [/ecommerce-dropshipping/ai-dropshipping-automation.md](./ecommerce-dropshipping/ai-dropshipping-automation.md) | Full-stack AI dropshipping automation: AutoDS, Claude copywriting, AI customer support chatbots. |
+| [/affiliate-content/ai-affiliate-content-engine.md](./affiliate-content/ai-affiliate-content-engine.md) | Autonomous content engine for affiliate marketing: trend scanning, SEO article generation, and auto-publishing. |
+| [/options-futures/ai-options-futures-bots.md](./options-futures/ai-options-futures-bots.md) | Micro-futures AI signal generators, vibe-coded 24/7 algo bots with Claude, and IV analysis for options pricing. |
+| [/real-estate-automation/ai-deal-finding-automation.md](./real-estate-automation/ai-deal-finding-automation.md) | AI-powered lead qualification, listing copy generation, and CRM automation for real estate investors. |
+| [/domain-seo/domain-flipping-seo-arbitrage.md](./domain-seo/domain-flipping-seo-arbitrage.md) | AI-assisted domain valuation, expired domain scanning, and SEO content farm automation. |
+| [/nft-digital-assets/nft-flipping-bots.md](./nft-digital-assets/nft-flipping-bots.md) | Floor sweeping with AI sentiment triggers, rarity sniping, and wash trading detection. |
+| [/rental-arbitrage/airbnb-rental-arbitrage-automation.md](./rental-arbitrage/airbnb-rental-arbitrage-automation.md) | Dynamic pricing automation, Claude-powered guest communication, and AI-assisted property sourcing. |
+| [/polymarket-strategies/polymarket-ai-bot-15min-pipeline.md](./polymarket-strategies/polymarket-ai-bot-15min-pipeline.md) | Two-timeframe Polymarket bot combining 15-minute momentum signals with daily Claude fundamental analysis. |
 
 ---
 
@@ -28,7 +36,8 @@ A comprehensive, living database of money-making ideas and strategies involving 
 - [GitHub Agent Hierarchy Research](./claude-hierarchy/github_hierarchy_research.md) — Deep analysis of 15+ GitHub repos implementing Claude multi-agent systems. Covers 5 architecture patterns with trading applicability ratings.
 
 ### [/polymarket-strategies/](./polymarket-strategies/)
-- [Bayesian Event-Driven Arbitrage](./polymarket-strategies/bayesian-event-driven-arbitrage.md) — **NEW**
+- [Polymarket AI Bot: 15-Minute + Daily Pipeline](./polymarket-strategies/polymarket-ai-bot-15min-pipeline.md) — **NEW**
+- [Bayesian Event-Driven Arbitrage](./polymarket-strategies/bayesian-event-driven-arbitrage.md)
 - [PillarLab Multi-Pillar Analysis](./polymarket-strategies/pillarlab-multi-pillar-analysis.md)
 - [Weather Trading Bot Blueprint (2026)](./polymarket-strategies/weather-trading-bot-blueprint-2026.md)
 - [PolyCue Automated Trading Strategy](./polymarket-strategies/polycue-automated-trading.md)
@@ -44,7 +53,7 @@ A comprehensive, living database of money-making ideas and strategies involving 
 - [On-Chain Data Edge Strategy on Polymarket](./polymarket-strategies/on-chain-data-edge.md)
 
 ### [/kalshi-strategies/](./kalshi-strategies/)
-- [High-Probability Farming](./kalshi-strategies/high-probability-farming.md) — **NEW**
+- [High-Probability Farming](./kalshi-strategies/high-probability-farming.md)
 - [Kalshi Sports and Robinhood Integration Edge](./kalshi-strategies/kalshi-sports-robinhood-edge.md)
 - [Kalshi Section 1256 Tax Edge](./kalshi-strategies/tax-advantages.md)
 - [Kalshi CFTC-Regulated Arbitrage](./kalshi-strategies/cftc-arbitrage.md)
@@ -53,6 +62,36 @@ A comprehensive, living database of money-making ideas and strategies involving 
 - [Sports Betting Bots on Polymarket](./kalshi-strategies/sports-betting-bots-on-polymarket-automated-event-trading.md)
 - [Polymarket HFT: AI Arbitrage and Mispricing](./kalshi-strategies/polymarket-hft-how-traders-use-ai-to-identify-arbitrage-and-mispricing.md)
 - [15 Best Claude Code Business Ideas for Developers](./kalshi-strategies/15-best-claude-code-business-ideas-for-developers-2026.md)
+
+### [/sports-betting/](./sports-betting/) 🆕 NEW CATEGORY
+- [Sports Arbitrage & Value Betting Bots](./sports-betting/sports-arb-value-betting-bots.md) — **NEW**
+
+### [/defi-crypto/](./defi-crypto/) 🆕 NEW CATEGORY
+- [DeFi Yield Farming, MEV Bots & Liquidity Provision](./defi-crypto/defi-yield-mev-liquidity.md) — **NEW**
+
+### [/freelance-automation/](./freelance-automation/) 🆕 NEW CATEGORY
+- [AI Agent Gig Work (Upwork/Fiverr)](./freelance-automation/ai-agent-gig-work.md) — **NEW**
+
+### [/ecommerce-dropshipping/](./ecommerce-dropshipping/) 🆕 NEW CATEGORY
+- [AI Dropshipping & E-Commerce Automation](./ecommerce-dropshipping/ai-dropshipping-automation.md) — **NEW**
+
+### [/affiliate-content/](./affiliate-content/) 🆕 NEW CATEGORY
+- [AI Affiliate Marketing & Content Monetization Engine](./affiliate-content/ai-affiliate-content-engine.md) — **NEW**
+
+### [/options-futures/](./options-futures/) 🆕 NEW CATEGORY
+- [AI Options & Futures Trading Bots](./options-futures/ai-options-futures-bots.md) — **NEW**
+
+### [/real-estate-automation/](./real-estate-automation/) 🆕 NEW CATEGORY
+- [AI Real Estate Deal-Finding Automation](./real-estate-automation/ai-deal-finding-automation.md) — **NEW**
+
+### [/domain-seo/](./domain-seo/) 🆕 NEW CATEGORY
+- [Domain Flipping & SEO Arbitrage Automation](./domain-seo/domain-flipping-seo-arbitrage.md) — **NEW**
+
+### [/nft-digital-assets/](./nft-digital-assets/) 🆕 NEW CATEGORY
+- [NFT & Digital Asset Flipping Bots](./nft-digital-assets/nft-flipping-bots.md) — **NEW**
+
+### [/rental-arbitrage/](./rental-arbitrage/) 🆕 NEW CATEGORY
+- [Airbnb / VRBO Rental Arbitrage Automation](./rental-arbitrage/airbnb-rental-arbitrage-automation.md) — **NEW**
 
 ### [/claude-trading-setups/](./claude-trading-setups/)
 - [Claude Code Trading Bot Development](./claude-trading-setups/claude-code-trading-bot.md)
@@ -74,7 +113,7 @@ A comprehensive, living database of money-making ideas and strategies involving 
 - [Hurricane Track Analysis for Weather Trading](./weather-data-edges/hurricane-tracks.md)
 
 ### [/github-repos/](./github-repos/)
-- [Simmer AI Agent Interface](./github-repos/simmer-ai-agent-interface.md) — **NEW**
+- [Simmer AI Agent Interface](./github-repos/simmer-ai-agent-interface.md)
 - [CloddsBot AI Agent](./github-repos/cloddsbot-ai-agent.md)
 - [last30days-skill (AI Agent Research Tool)](./github-repos/last30days-skill-research-tool.md)
 - [Event Edge AI Tooling](./github-repos/event-edge-ai-tooling.md)
@@ -113,27 +152,43 @@ A comprehensive, living database of money-making ideas and strategies involving 
 | [Kalshi API](https://kalshi.com/docs) | CFTC-regulated prediction markets | Free |
 | [NOAA API](https://www.weather.gov/documentation/services-web-api) | Weather data for weather markets | Free |
 | [BLS API](https://www.bls.gov/developers/) | CPI, NFP economic data | Free |
-| [SEC EDGAR API](https://efts.sec.gov/LATEST/search-index) | Earnings filings, 10-K/10-Q | Free |
+| [The Odds API](https://the-odds-api.com/) | Sports betting odds aggregation | Free tier available |
+| [AutoDS](https://www.autods.com) | Dropshipping automation | Paid |
+| [PriceLabs](https://pricelabs.co) | Rental arbitrage dynamic pricing | Paid |
+| [Ahrefs API](https://ahrefs.com/api) | Domain backlink & traffic data | Paid |
+| [OpenClaw](https://openclaw.ai) | AI agent framework for automation | Free/Paid |
+| [n8n](https://n8n.io) | No-code workflow automation | Free/Self-hosted |
 | [Ollama](https://ollama.ai) | Local LLM hosting for worker agents | Free |
 | [LangGraph](https://langchain-ai.github.io/langgraph/) | State machine for trading workflows | Free |
 
 ---
 
-## 📊 Quick Reference: Strategy Comparison
+## 📊 Quick Reference: Strategy Comparison (All Categories)
 
-| Strategy | Platform | Volume | Tax Treatment | Durability | Claude Role |
-|----------|----------|--------|---------------|------------|-------------|
-| Automated Market Making | Both | MEDIUM | Short-term | HIGH | Liquidity provision |
-| Logical Arbitrage | Polymarket | LOW | Short-term | HIGH | Inconsistency detection |
-| Ultra-Short Crypto | Both | HIGH | Short-term | MEDIUM | Pattern recognition |
-| Weather Arbitrage | Polymarket | LOW | Short-term gains | HIGH | Data synthesis |
-| Economic Data (CPI/NFP) | Kalshi | LOW | 60/40 Section 1256 | HIGH | Forecast generation |
-| Polymarket vs Kalshi Arb | Both | MEDIUM | Mixed | MEDIUM | Odds monitoring |
-| Earnings Options | Stocks | LOW | Short-term | HIGH | IV analysis |
-| Macro Futures | Futures | LOW | 60/40 Section 1256 | HIGH | Thesis generation |
-| Political Markets | Polymarket | LOW | Short-term | MEDIUM | Polling synthesis |
-| On-Chain Crypto Events | Polymarket | LOW | Short-term | MEDIUM | Chain data analysis |
-| Sports Prediction | Kalshi | LOW | 60/40 Section 1256 | MEDIUM | Stats modeling |
+| Strategy | Category | Est. Monthly Yield | Risk | Durability | Claude Role |
+|----------|----------|--------------------|------|------------|-------------|
+| Sports Arbitrage (Sure Bets) | Sports Betting | 2–5% | LOW | MEDIUM | Odds analysis |
+| AI Value Betting | Sports Betting | 5–15% | MEDIUM | HIGH | Probability estimation |
+| BTC Yield Farming (Base) | DeFi/Crypto | 3–8% APY | MEDIUM | HIGH | Strategy selection |
+| MEV Extraction | DeFi/Crypto | Variable | HIGH | MEDIUM | Route optimization |
+| AI Chatbot Setup (Freelance) | Freelance | $500–2k/project | LOW | HIGH | Orchestration |
+| AI Dropshipping | E-Commerce | Variable | MEDIUM | HIGH | Copywriting, support |
+| Affiliate SEO Pipeline | Affiliate/Content | Compounding | LOW | HIGH | Article generation |
+| Micro-Futures Bot | Options/Futures | 3–8% | MEDIUM | HIGH | Signal interpretation |
+| Options IV Arb | Options/Futures | 2–6% | MEDIUM | HIGH | IV analysis |
+| RE Deal Finding | Real Estate | $500–2k/project | LOW | HIGH | Underwriting |
+| Domain Flipping | Domain/SEO | Variable | MEDIUM | MEDIUM | Valuation, copy |
+| NFT Floor Sweeping | NFT/Digital | Variable | HIGH | LOW | Sentiment analysis |
+| Rental Arbitrage | Rental Arb | 15–30% rev lift | LOW | HIGH | Guest communication |
+| Automated Market Making | Polymarket | MEDIUM | MEDIUM | HIGH | Liquidity provision |
+| Kalshi High-Prob Farming | Kalshi | 3–5%/month | LOW | HIGH | Tail-risk analysis |
+| Bayesian Arb (Rust) | Polymarket | Variable | MEDIUM | HIGH | Probability modeling |
+
+---
+
+## 🔑 Credentials & Configuration
+
+X API credentials and GitHub PAT are stored at `/home/ubuntu/.config/research-bot/credentials.env` (chmod 600). The `daily_research.py` script loads these at runtime. **Do not commit credentials to this repository.**
 
 ---
 
