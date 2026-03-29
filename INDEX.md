@@ -2,25 +2,15 @@
 
 A comprehensive, living database of money-making ideas and strategies involving Claude AI, Polymarket, Kalshi, sports betting, DeFi, freelance automation, e-commerce, affiliate marketing, options/futures, real estate, domain flipping, NFTs, rental arbitrage, and more. Includes architecture blueprints, raw source materials, and AI-generated analysis.
 
-**Last Updated:** 2026-03-25 | **Total Files:** 100+ | **Repo:** [speck0fdust34532/polymarket-claude-ideas-db](https://github.com/speck0fdust34532/polymarket-claude-ideas-db)
+**Last Updated:** 2026-03-28 | **Total Files:** 101+ | **Repo:** [speck0fdust34532/polymarket-claude-ideas-db](https://github.com/speck0fdust34532/polymarket-claude-ideas-db)
 
 ---
 
-## 🆕 New in This Update (2026-03-25)
+## 🆕 New in This Update (2026-03-28)
 
 | File | Description |
 |------|-------------|
-| [/sports-betting/sports-arb-value-betting-bots.md](./sports-betting/sports-arb-value-betting-bots.md) | Cross-bookmaker arbitrage, AI value betting (60–75% accuracy), and directional arb on Polymarket sports markets. |
-| [/defi-crypto/defi-yield-mev-liquidity.md](./defi-crypto/defi-yield-mev-liquidity.md) | Autonomous BTC yield farming on Base, MEV bot strategies, and concentrated liquidity provision automation. |
-| [/freelance-automation/ai-agent-gig-work.md](./freelance-automation/ai-agent-gig-work.md) | AI agents doing gig work on Upwork/Fiverr: chatbot setup, lead gen, content pipelines, and missed call automation. |
-| [/ecommerce-dropshipping/ai-dropshipping-automation.md](./ecommerce-dropshipping/ai-dropshipping-automation.md) | Full-stack AI dropshipping automation: AutoDS, Claude copywriting, AI customer support chatbots. |
-| [/affiliate-content/ai-affiliate-content-engine.md](./affiliate-content/ai-affiliate-content-engine.md) | Autonomous content engine for affiliate marketing: trend scanning, SEO article generation, and auto-publishing. |
-| [/options-futures/ai-options-futures-bots.md](./options-futures/ai-options-futures-bots.md) | Micro-futures AI signal generators, vibe-coded 24/7 algo bots with Claude, and IV analysis for options pricing. |
-| [/real-estate-automation/ai-deal-finding-automation.md](./real-estate-automation/ai-deal-finding-automation.md) | AI-powered lead qualification, listing copy generation, and CRM automation for real estate investors. |
-| [/domain-seo/domain-flipping-seo-arbitrage.md](./domain-seo/domain-flipping-seo-arbitrage.md) | AI-assisted domain valuation, expired domain scanning, and SEO content farm automation. |
-| [/nft-digital-assets/nft-flipping-bots.md](./nft-digital-assets/nft-flipping-bots.md) | Floor sweeping with AI sentiment triggers, rarity sniping, and wash trading detection. |
-| [/rental-arbitrage/airbnb-rental-arbitrage-automation.md](./rental-arbitrage/airbnb-rental-arbitrage-automation.md) | Dynamic pricing automation, Claude-powered guest communication, and AI-assisted property sourcing. |
-| [/polymarket-strategies/polymarket-ai-bot-15min-pipeline.md](./polymarket-strategies/polymarket-ai-bot-15min-pipeline.md) | Two-timeframe Polymarket bot combining 15-minute momentum signals with daily Claude fundamental analysis. |
+| [/github-repos/polymarket-alpha-bot.md](./github-repos/polymarket-alpha-bot.md) | Alphapoly: An LLM-driven alpha detection platform for finding covering portfolios and hedging opportunities on Polymarket. |
 
 ---
 
@@ -36,7 +26,7 @@ A comprehensive, living database of money-making ideas and strategies involving 
 - [GitHub Agent Hierarchy Research](./claude-hierarchy/github_hierarchy_research.md) — Deep analysis of 15+ GitHub repos implementing Claude multi-agent systems. Covers 5 architecture patterns with trading applicability ratings.
 
 ### [/polymarket-strategies/](./polymarket-strategies/)
-- [Polymarket AI Bot: 15-Minute + Daily Pipeline](./polymarket-strategies/polymarket-ai-bot-15min-pipeline.md) — **NEW**
+- [Polymarket AI Bot: 15-Minute + Daily Pipeline](./polymarket-strategies/polymarket-ai-bot-15min-pipeline.md)
 - [Bayesian Event-Driven Arbitrage](./polymarket-strategies/bayesian-event-driven-arbitrage.md)
 - [PillarLab Multi-Pillar Analysis](./polymarket-strategies/pillarlab-multi-pillar-analysis.md)
 - [Weather Trading Bot Blueprint (2026)](./polymarket-strategies/weather-trading-bot-blueprint-2026.md)
@@ -63,35 +53,35 @@ A comprehensive, living database of money-making ideas and strategies involving 
 - [Polymarket HFT: AI Arbitrage and Mispricing](./kalshi-strategies/polymarket-hft-how-traders-use-ai-to-identify-arbitrage-and-mispricing.md)
 - [15 Best Claude Code Business Ideas for Developers](./kalshi-strategies/15-best-claude-code-business-ideas-for-developers-2026.md)
 
-### [/sports-betting/](./sports-betting/) 🆕 NEW CATEGORY
-- [Sports Arbitrage & Value Betting Bots](./sports-betting/sports-arb-value-betting-bots.md) — **NEW**
+### [/sports-betting/](./sports-betting/)
+- [Sports Arbitrage & Value Betting Bots](./sports-betting/sports-arb-value-betting-bots.md)
 
-### [/defi-crypto/](./defi-crypto/) 🆕 NEW CATEGORY
-- [DeFi Yield Farming, MEV Bots & Liquidity Provision](./defi-crypto/defi-yield-mev-liquidity.md) — **NEW**
+### [/defi-crypto/](./defi-crypto/)
+- [DeFi Yield Farming, MEV Bots & Liquidity Provision](./defi-crypto/defi-yield-mev-liquidity.md)
 
-### [/freelance-automation/](./freelance-automation/) 🆕 NEW CATEGORY
-- [AI Agent Gig Work (Upwork/Fiverr)](./freelance-automation/ai-agent-gig-work.md) — **NEW**
+### [/freelance-automation/](./freelance-automation/)
+- [AI Agent Gig Work (Upwork/Fiverr)](./freelance-automation/ai-agent-gig-work.md)
 
-### [/ecommerce-dropshipping/](./ecommerce-dropshipping/) 🆕 NEW CATEGORY
-- [AI Dropshipping & E-Commerce Automation](./ecommerce-dropshipping/ai-dropshipping-automation.md) — **NEW**
+### [/ecommerce-dropshipping/](./ecommerce-dropshipping/)
+- [AI Dropshipping & E-Commerce Automation](./ecommerce-dropshipping/ai-dropshipping-automation.md)
 
-### [/affiliate-content/](./affiliate-content/) 🆕 NEW CATEGORY
-- [AI Affiliate Marketing & Content Monetization Engine](./affiliate-content/ai-affiliate-content-engine.md) — **NEW**
+### [/affiliate-content/](./affiliate-content/)
+- [AI Affiliate Marketing & Content Monetization Engine](./affiliate-content/ai-affiliate-content-engine.md)
 
-### [/options-futures/](./options-futures/) 🆕 NEW CATEGORY
-- [AI Options & Futures Trading Bots](./options-futures/ai-options-futures-bots.md) — **NEW**
+### [/options-futures/](./options-futures/)
+- [AI Options & Futures Trading Bots](./options-futures/ai-options-futures-bots.md)
 
-### [/real-estate-automation/](./real-estate-automation/) 🆕 NEW CATEGORY
-- [AI Real Estate Deal-Finding Automation](./real-estate-automation/ai-deal-finding-automation.md) — **NEW**
+### [/real-estate-automation/](./real-estate-automation/)
+- [AI Real Estate Deal-Finding Automation](./real-estate-automation/ai-deal-finding-automation.md)
 
-### [/domain-seo/](./domain-seo/) 🆕 NEW CATEGORY
-- [Domain Flipping & SEO Arbitrage Automation](./domain-seo/domain-flipping-seo-arbitrage.md) — **NEW**
+### [/domain-seo/](./domain-seo/)
+- [Domain Flipping & SEO Arbitrage Automation](./domain-seo/domain-flipping-seo-arbitrage.md)
 
-### [/nft-digital-assets/](./nft-digital-assets/) 🆕 NEW CATEGORY
-- [NFT & Digital Asset Flipping Bots](./nft-digital-assets/nft-flipping-bots.md) — **NEW**
+### [/nft-digital-assets/](./nft-digital-assets/)
+- [NFT & Digital Asset Flipping Bots](./nft-digital-assets/nft-flipping-bots.md)
 
-### [/rental-arbitrage/](./rental-arbitrage/) 🆕 NEW CATEGORY
-- [Airbnb / VRBO Rental Arbitrage Automation](./rental-arbitrage/airbnb-rental-arbitrage-automation.md) — **NEW**
+### [/rental-arbitrage/](./rental-arbitrage/)
+- [Airbnb / VRBO Rental Arbitrage Automation](./rental-arbitrage/airbnb-rental-arbitrage-automation.md)
 
 ### [/claude-trading-setups/](./claude-trading-setups/)
 - [Claude Code Trading Bot Development](./claude-trading-setups/claude-code-trading-bot.md)
@@ -113,6 +103,7 @@ A comprehensive, living database of money-making ideas and strategies involving 
 - [Hurricane Track Analysis for Weather Trading](./weather-data-edges/hurricane-tracks.md)
 
 ### [/github-repos/](./github-repos/)
+- [Polymarket Alpha Bot (Alphapoly)](./github-repos/polymarket-alpha-bot.md) — **NEW**
 - [Simmer AI Agent Interface](./github-repos/simmer-ai-agent-interface.md)
 - [CloddsBot AI Agent](./github-repos/cloddsbot-ai-agent.md)
 - [last30days-skill (AI Agent Research Tool)](./github-repos/last30days-skill-research-tool.md)
@@ -167,6 +158,7 @@ A comprehensive, living database of money-making ideas and strategies involving 
 
 | Strategy | Category | Est. Monthly Yield | Risk | Durability | Claude Role |
 |----------|----------|--------------------|------|------------|-------------|
+| Polymarket Alpha Bot (Alphapoly) | Prediction Markets | Variable | MEDIUM | HIGH | Alpha detection |
 | Sports Arbitrage (Sure Bets) | Sports Betting | 2–5% | LOW | MEDIUM | Odds analysis |
 | AI Value Betting | Sports Betting | 5–15% | MEDIUM | HIGH | Probability estimation |
 | BTC Yield Farming (Base) | DeFi/Crypto | 3–8% APY | MEDIUM | HIGH | Strategy selection |
@@ -182,7 +174,6 @@ A comprehensive, living database of money-making ideas and strategies involving 
 | Rental Arbitrage | Rental Arb | 15–30% rev lift | LOW | HIGH | Guest communication |
 | Automated Market Making | Polymarket | MEDIUM | MEDIUM | HIGH | Liquidity provision |
 | Kalshi High-Prob Farming | Kalshi | 3–5%/month | LOW | HIGH | Tail-risk analysis |
-| Bayesian Arb (Rust) | Polymarket | Variable | MEDIUM | HIGH | Probability modeling |
 
 ---
 
