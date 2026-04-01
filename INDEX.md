@@ -2,14 +2,16 @@
 
 A comprehensive, living database of money-making ideas and strategies involving Claude AI, Polymarket, Kalshi, sports betting, DeFi, freelance automation, e-commerce, affiliate marketing, options/futures, real estate, domain flipping, NFTs, rental arbitrage, and more. Includes architecture blueprints, raw source materials, and AI-generated analysis.
 
-**Last Updated:** 2026-03-28 | **Total Files:** 101+ | **Repo:** [speck0fdust34532/polymarket-claude-ideas-db](https://github.com/speck0fdust34532/polymarket-claude-ideas-db)
+**Last Updated:** 2026-04-01 | **Total Files:** 105+ | **Repo:** [speck0fdust34532/polymarket-claude-ideas-db](https://github.com/speck0fdust34532/polymarket-claude-ideas-db)
 
 ---
 
-## 🆕 New in This Update (2026-03-28)
+## 🆕 New in This Update (2026-04-01)
 
 | File | Description |
 |------|-------------|
+| [Top_3_Polymarket_AI_Agent_Strategies.md](./Top_3_Polymarket_AI_Agent_Strategies.md) | **NEW ANALYSIS** - Top 3 autonomous AI agent strategies for Polymarket in 2026. |
+| [/research/kalshi-high-prob-farming-origins.md](./research/kalshi-high-prob-farming-origins.md) | Deep-dive origins report for Kalshi high-probability farming and CPI/macro trading strategy. |
 | [/github-repos/polymarket-alpha-bot.md](./github-repos/polymarket-alpha-bot.md) | Alphapoly: An LLM-driven alpha detection platform for finding covering portfolios and hedging opportunities on Polymarket. |
 
 ---
@@ -17,6 +19,7 @@ A comprehensive, living database of money-making ideas and strategies involving 
 ## 📚 Table of Contents
 
 ### [/opus-analysis/](./opus-analysis/) ⭐ START HERE
+- [**Top 3 Polymarket AI Agent Strategies (2026 Analysis)**](./Top_3_Polymarket_AI_Agent_Strategies.md) — **MUST READ** for active traders.
 - [**Claude-Bot Trading Company: Full Architecture Analysis**](./opus-analysis/opus_architecture_analysis.md) — Opus 4.5 synthesis of all research. Covers: pattern review, 3 architecture blueprints (Lean Solo Trader, Research Engine, Multi-Market Command Center), role definitions for 10 agents, 4-week implementation roadmap, and zero-log API setup guide.
 
 ### [/grok-ideas/](./grok-ideas/)
@@ -129,6 +132,9 @@ A comprehensive, living database of money-making ideas and strategies involving 
 - [On-Chain Data - Dune](./raw-sources/onchain-data-dune.md)
 - [Polymarket HFT - QuantVPS](./raw-sources/polymarket-hft-quantvps.md)
 - [Political Polling - Paradox Intelligence](./raw-sources/political-polling-paradoxintelligence.md)
+
+### [/research/](./research/)
+- [**Kalshi High-Prob Farming Origins**](./research/kalshi-high-prob-farming-origins.md) — Deep-dive research report on the origins and academic validation of the high-probability farming strategy.
 
 ---
 
