@@ -2,17 +2,17 @@
 
 A comprehensive, living database of money-making ideas and strategies involving Claude AI, Polymarket, Kalshi, sports betting, DeFi, freelance automation, e-commerce, affiliate marketing, options/futures, real estate, domain flipping, NFTs, rental arbitrage, and more. Includes architecture blueprints, raw source materials, and AI-generated analysis.
 
-**Last Updated:** 2026-04-01 | **Total Files:** 105+ | **Repo:** [speck0fdust34532/polymarket-claude-ideas-db](https://github.com/speck0fdust34532/polymarket-claude-ideas-db)
+**Last Updated:** 2026-04-02 | **Total Files:** 106+ | **Repo:** [speck0fdust34532/polymarket-claude-ideas-db](https://github.com/speck0fdust34532/polymarket-claude-ideas-db)
 
 ---
 
-## 🆕 New in This Update (2026-04-01)
+## 🆕 New in This Update (2026-04-02)
 
 | File | Description |
 |------|-------------|
+| [/claude-trading-setups/tradingview-mcp-integration.md](./claude-trading-setups/tradingview-mcp-integration.md) | How to connect Claude to TradingView Desktop via Chrome DevTools Protocol for full chart automation and Pine Script development. |
 | [Top_3_Polymarket_AI_Agent_Strategies.md](./Top_3_Polymarket_AI_Agent_Strategies.md) | **NEW ANALYSIS** - Top 3 autonomous AI agent strategies for Polymarket in 2026. |
 | [/research/kalshi-high-prob-farming-origins.md](./research/kalshi-high-prob-farming-origins.md) | Deep-dive origins report for Kalshi high-probability farming and CPI/macro trading strategy. |
-| [/github-repos/polymarket-alpha-bot.md](./github-repos/polymarket-alpha-bot.md) | Alphapoly: An LLM-driven alpha detection platform for finding covering portfolios and hedging opportunities on Polymarket. |
 
 ---
 
@@ -87,6 +87,7 @@ A comprehensive, living database of money-making ideas and strategies involving 
 - [Airbnb / VRBO Rental Arbitrage Automation](./rental-arbitrage/airbnb-rental-arbitrage-automation.md)
 
 ### [/claude-trading-setups/](./claude-trading-setups/)
+- [TradingView MCP Integration (Claude Code)](./claude-trading-setups/tradingview-mcp-integration.md) — **NEW**
 - [Claude Code Trading Bot Development](./claude-trading-setups/claude-code-trading-bot.md)
 - [Two-Layer AI Trading Blueprint](./claude-trading-setups/two-layer-ai-trading-blueprint.md)
 - [Prediction Market AI Framework (2026)](./claude-trading-setups/prediction-market-ai-framework-2026.md)
