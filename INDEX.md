@@ -2,11 +2,21 @@
 
 A comprehensive, living database of money-making ideas and strategies involving Claude AI, Polymarket, Kalshi, sports betting, DeFi, freelance automation, e-commerce, affiliate marketing, options/futures, real estate, domain flipping, NFTs, rental arbitrage, and more. Includes architecture blueprints, raw source materials, and AI-generated analysis.
 
-**Last Updated:** 2026-04-02 | **Total Files:** 106+ | **Repo:** [speck0fdust34532/polymarket-claude-ideas-db](https://github.com/speck0fdust34532/polymarket-claude-ideas-db)
+**Last Updated:** 2026-04-04 | **Total Files:** 109+ | **Repo:** [speck0fdust34532/polymarket-claude-ideas-db](https://github.com/speck0fdust34532/polymarket-claude-ideas-db)
 
 ---
 
-## 🆕 New in This Update (2026-04-02)
+## 🆕 New in This Update (2026-04-04)
+
+| File | Description |
+|------|-------------|
+| [/kalshi-strategies/predict-and-profit-data-pipelines.md](./kalshi-strategies/predict-and-profit-data-pipelines.md) | **NEW** - Kalshi Predict & Profit: a two-bot system using Cleveland Fed Nowcast + 62-member NOAA AIGEFS ensemble to find mathematical edges in CPI and weather markets. |
+| [/polymarket-strategies/prediction-market-hype-trading.md](./polymarket-strategies/prediction-market-hype-trading.md) | **NEW** - Prediction Market Hype Trading: using Polymarket/Kalshi probability shifts to front-run equity earnings moves (InvestorPlace, 60% win rate, 85.76% avg return). |
+| [/github-repos/kalshi-ai-trading-bot-ryanfrigo.md](./github-repos/kalshi-ai-trading-bot-ryanfrigo.md) | **NEW** - ryanfrigo/kalshi-ai-trading-bot: 5-model LLM ensemble (Claude, GPT, Gemini, DeepSeek, Grok) via OpenRouter with Kelly sizing, Safe Compounder mode, and Streamlit dashboard. |
+
+---
+
+## Previously Added (2026-04-02)
 
 | File | Description |
 |------|-------------|
@@ -44,8 +54,10 @@ A comprehensive, living database of money-making ideas and strategies involving 
 - [CPI & Macro Data Trading Strategy](./polymarket-strategies/cpi-macro-trading.md)
 - [Sports Betting Bots Strategy on Polymarket](./polymarket-strategies/sports-betting-bots.md)
 - [On-Chain Data Edge Strategy on Polymarket](./polymarket-strategies/on-chain-data-edge.md)
+- [Prediction Market Hype Trading (Equity Front-Running)](./polymarket-strategies/prediction-market-hype-trading.md) — **NEW**
 
 ### [/kalshi-strategies/](./kalshi-strategies/)
+- [Predict & Profit: Data Pipeline Trading (Econ + Weather Bots)](./kalshi-strategies/predict-and-profit-data-pipelines.md) — **NEW**
 - [High-Probability Farming](./kalshi-strategies/high-probability-farming.md)
 - [Kalshi Sports and Robinhood Integration Edge](./kalshi-strategies/kalshi-sports-robinhood-edge.md)
 - [Kalshi Section 1256 Tax Edge](./kalshi-strategies/tax-advantages.md)
@@ -107,7 +119,8 @@ A comprehensive, living database of money-making ideas and strategies involving 
 - [Hurricane Track Analysis for Weather Trading](./weather-data-edges/hurricane-tracks.md)
 
 ### [/github-repos/](./github-repos/)
-- [Polymarket Alpha Bot (Alphapoly)](./github-repos/polymarket-alpha-bot.md) — **NEW**
+- [Kalshi AI Trading Bot — 5-Model Ensemble (ryanfrigo)](./github-repos/kalshi-ai-trading-bot-ryanfrigo.md) — **NEW**
+- [Polymarket Alpha Bot (Alphapoly)](./github-repos/polymarket-alpha-bot.md)
 - [Simmer AI Agent Interface](./github-repos/simmer-ai-agent-interface.md)
 - [CloddsBot AI Agent](./github-repos/cloddsbot-ai-agent.md)
 - [last30days-skill (AI Agent Research Tool)](./github-repos/last30days-skill-research-tool.md)
@@ -181,6 +194,8 @@ A comprehensive, living database of money-making ideas and strategies involving 
 | Rental Arbitrage | Rental Arb | 15–30% rev lift | LOW | HIGH | Guest communication |
 | Automated Market Making | Polymarket | MEDIUM | MEDIUM | HIGH | Liquidity provision |
 | Kalshi High-Prob Farming | Kalshi | 3–5%/month | LOW | HIGH | Tail-risk analysis |
+| Predict & Profit (Econ+Weather Bots) | Kalshi | Steady compounding | LOW | HIGH | Data pipeline edge |
+| Prediction Market Hype Trading | Polymarket/Equities | 60% win rate, 85% avg | MEDIUM | HIGH | Probability signal |
 
 ---
 
