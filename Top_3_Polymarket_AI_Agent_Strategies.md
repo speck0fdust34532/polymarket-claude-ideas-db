@@ -1,6 +1,6 @@
 # Top 3 Polymarket AI Agent Strategies (2026 Analysis)
 
-**Date:** April 1, 2026  
+**Date:** April 4, 2026  
 **Author:** Manus AI Research  
 **Focus:** High-performance autonomous trading strategies for Polymarket using Claude 4.5 and multi-agent systems.
 
@@ -57,6 +57,16 @@ As of early 2026, over 30% of active wallets on Polymarket are driven by AI agen
 
 ---
 
+## 4. Honorable Mentions & Emerging Strategies (Added April 4, 2026)
+
+Recent research sweeps have identified three additional highly effective strategies that complement the top three:
+
+*   **Kalshi Predict & Profit (Data Pipeline Edge):** A two-bot system (Econ Bot + Weather Bot) that bypasses AI sentiment entirely in favor of hard mathematical baselines. It uses the Cleveland Fed Nowcast and a 62-member NOAA AIGEFS ensemble pulled directly from AWS S3 to find structural mispricing in CPI and weather markets.
+*   **Prediction Market Hype Trading:** A strategy that uses Polymarket and Kalshi probability shifts as a leading indicator to front-run traditional equity earnings moves. When prediction markets reprice before stocks adjust, structured options trades capture the gap closing (reported 60% win rate).
+*   **Kalshi AI Trading Bot (5-Model Ensemble):** A production-ready open-source bot (`ryanfrigo/kalshi-ai-trading-bot`) that uses a 5-model LLM debate system (Claude, Gemini, GPT, DeepSeek, Grok) to reach consensus before trading. It features a highly profitable "Safe Compounder" mode focusing on NCAAB NO-side contracts.
+
+---
+
 ## Summary Comparison Table
 
 | Strategy | Primary Tool | Best Market Type | Capital Requirement |
@@ -64,6 +74,9 @@ As of early 2026, over 30% of active wallets on Polymarket are driven by AI agen
 | **Probability Arb** | Multi-Model Ensemble | Political / Macro | Medium ($5k+) |
 | **Semantic Momentum** | Claude 4.5 + X API | Breaking News / Pop Culture | Low ($1k+) |
 | **Logical Arbitrage** | Cross-Venue API | Fed Rates / Economic Data | High ($10k+) |
+| **Predict & Profit** | Data Pipelines (AWS S3) | CPI / Weather | Medium ($5k+) |
+| **Hype Trading** | Equity Options | Correlated Stocks | High ($10k+) |
+| **5-Model Ensemble** | OpenRouter (5 LLMs) | NCAAB / Sports | Low ($1k+) |
 
 ---
 
