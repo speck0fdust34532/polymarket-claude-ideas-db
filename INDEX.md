@@ -2,11 +2,19 @@
 
 A comprehensive, living database of money-making ideas and strategies involving Claude AI, Polymarket, Kalshi, sports betting, DeFi, freelance automation, e-commerce, affiliate marketing, options/futures, real estate, domain flipping, NFTs, rental arbitrage, and more. Includes architecture blueprints, raw source materials, and AI-generated analysis.
 
-**Last Updated:** 2026-04-04 | **Total Markdown Files:** 85 | **Repo:** [speck0fdust34532/polymarket-claude-ideas-db](https://github.com/speck0fdust34532/polymarket-claude-ideas-db)
+**Last Updated:** 2026-04-13 | **Total Markdown Files:** 86 | **Repo:** [speck0fdust34532/polymarket-claude-ideas-db](https://github.com/speck0fdust34532/polymarket-claude-ideas-db)
 
 ---
 
-## 🆕 New in This Update (2026-04-04)
+## 🆕 New in This Update (2026-04-13)
+
+| File | Description |
+|------|-------------|
+| [/polymarket-strategies/lunar-researcher-wallet-analysis-claude-code-bot.md](./polymarket-strategies/lunar-researcher-wallet-analysis-claude-code-bot.md) | **NEW** - @LunarResearcher: Mass analysis of 14,000 Polymarket wallets with Claude Code. Reverse-engineered the top 0.1% playbook (47 wallets, 71% win rate). Full 4-repo open-source bot stack, 3 exit triggers, Kelly sizing, $800→$11,400 in 19 days. |
+
+---
+
+## Previously Added (2026-04-04)
 
 | File | Description |
 |------|-------------|
@@ -54,7 +62,8 @@ A comprehensive, living database of money-making ideas and strategies involving 
 - [CPI & Macro Data Trading Strategy](./polymarket-strategies/cpi-macro-trading.md)
 - [Sports Betting Bots Strategy on Polymarket](./polymarket-strategies/sports-betting-bots.md)
 - [On-Chain Data Edge Strategy on Polymarket](./polymarket-strategies/on-chain-data-edge.md)
-- [Prediction Market Hype Trading (Equity Front-Running)](./polymarket-strategies/prediction-market-hype-trading.md) — **NEW**
+- [Prediction Market Hype Trading (Equity Front-Running)](./polymarket-strategies/prediction-market-hype-trading.md)
+- [LunarResearcher: 14,000 Wallet Analysis + Claude Code Bot ($800→$11,400)](./polymarket-strategies/lunar-researcher-wallet-analysis-claude-code-bot.md) — **NEW**
 
 ### [/kalshi-strategies/](./kalshi-strategies/)
 - [Predict & Profit: Data Pipeline Trading (Econ + Weather Bots)](./kalshi-strategies/predict-and-profit-data-pipelines.md) — **NEW**
